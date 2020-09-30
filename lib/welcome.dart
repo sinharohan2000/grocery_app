@@ -10,27 +10,52 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateMixin {
+
+  AnimationController controller;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    controller = AnimationController(
+      duration: Duration(seconds: 1),
+      vsync: this,
+    );
+    controller.forward();
+    controller.addListener(() {
+      setState(() {
+
+      });
+      print(controller.value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      //backgroundColor: Colors.teal,
       body:SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
               child: Column(
+
                 children: <Widget>[
-                  Image(
-                    image: AssetImage('images/food-delivery.png'),
-                    width: 50.0,
+                  Hero(
+                    tag: 'logo',
+                    child: Image(
+                      image: AssetImage('images/food-delivery.png'),
+                      width: 100.0,
+                    ),
                   ),
                   Text(
                     'Small Basket',
                     style: TextStyle(
                       fontFamily: 'SansitaSwashed',
-                      color:Colors.white,
+                      color: Colors.brown[500],
                       fontSize: 30.0,
                       letterSpacing: 2.5,
                       fontWeight: FontWeight.bold,
@@ -40,7 +65,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               ),
             ),
             Container(
-              color: Colors.yellow,
+              decoration: BoxDecoration(
+                color: Colors.brown[200],
+                borderRadius: BorderRadius.circular(10.0),
+              ),
               margin: EdgeInsets.symmetric(vertical: 10.0,horizontal:
               25.0),
 

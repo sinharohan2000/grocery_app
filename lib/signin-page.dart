@@ -19,12 +19,33 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Hero(
-              tag: 'logo',
-              child: Container(
-                height: 200.0,
-                child: Image.asset('images/logo.png'),
-              ),
+            Row(
+              children: <Widget>[
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    height: 50.0,
+                    child: Image(
+                      image: AssetImage('images/food-delivery.png'),
+                      width: 50.0,
+                    )
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10.0,horizontal:25.0),
+                  child: Text(
+                    'Login',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontFamily: 'SansitaSwashed',
+                      color: Colors.brown[500],
+                      fontSize: 30.0,
+                      letterSpacing: 2.5,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
             ),
             SizedBox(
               height: 48.0,
