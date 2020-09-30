@@ -12,7 +12,7 @@ class GroceryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Grocery App',
       theme: ThemeData(
         backgroundColor: Color(0xfff4e3),
         primarySwatch: Colors.blue,
