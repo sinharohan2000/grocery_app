@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceryapp/signin-page.dart';
+import 'package:groceryapp/login-page.dart';
+import 'package:groceryapp/registration-screen.dart';
 import 'package:groceryapp/welcome.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class GroceryApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Small Basket : The Perfect Grocery Store'),
     );
   }
 }
@@ -36,6 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id:(context) => LoginScreen(),
+        RegistrationScreen.id:(context) => RegistrationScreen(),
       },
     );
   }

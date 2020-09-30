@@ -1,6 +1,7 @@
 import 'package:groceryapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:groceryapp/registration-screen.dart';
 
 class LoginScreen extends StatefulWidget {
   static const id = 'login_screen';
@@ -12,7 +13,6 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -63,12 +63,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+                  BorderSide(color: Colors.brown[700], width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                  BorderSide(color: Colors.brown[700], width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -89,12 +89,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(color: Colors.lightBlueAccent, width: 1.0),
+                  BorderSide(color: Colors.brown[700], width: 1.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderSide:
-                  BorderSide(color: Colors.lightBlueAccent, width: 2.0),
+                  BorderSide(color: Colors.brown[700], width: 2.0),
                   borderRadius: BorderRadius.all(Radius.circular(32.0)),
                 ),
               ),
@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 16.0),
               child: Material(
-                color: Colors.lightBlueAccent,
+                color: Colors.brown[700],
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
@@ -116,6 +116,33 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 42.0,
                   child: Text(
                     'Log In',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20.0,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
+              child: Material(
+                color: Colors.brown[200],
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                elevation: 5.0,
+                child: MaterialButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, RegistrationScreen.id);
+                  },
+                  minWidth: 10.0,
+                  height: 20.0,
+                  child: Text(
+                    'Register',
+                    style: TextStyle(
+                      color: Colors.brown[900],
+                    ),
                   ),
                 ),
               ),

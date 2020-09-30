@@ -2,7 +2,7 @@ import 'package:groceryapp/main.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceryapp/signin-page.dart';
+import 'package:groceryapp/login-page.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';
@@ -14,11 +14,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
 
   AnimationController controller;
 
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
     controller = AnimationController(
       duration: Duration(seconds: 1),
       vsync: this,
@@ -26,7 +25,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
     controller.forward();
     controller.addListener(() {
       setState(() {
-
       });
       print(controller.value);
     });
@@ -42,7 +40,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> with TickerProviderStateM
           children: [
             Center(
               child: Column(
-
                 children: <Widget>[
                   Hero(
                     tag: 'logo',
