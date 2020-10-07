@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceryapp/login-page.dart';
 import 'package:groceryapp/registration-screen.dart';
 import 'package:groceryapp/welcome.dart';
+import 'package:groceryapp/home_screen.dart';
 
 void main() {
   runApp(GroceryApp());
@@ -38,6 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
         WelcomeScreen.id: (context) => WelcomeScreen(),
         LoginScreen.id:(context) => LoginScreen(),
         RegistrationScreen.id:(context) => RegistrationScreen(),
+        HomeScreen.id:(context) => HomeScreen(),
       },
     );
   }

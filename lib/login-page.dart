@@ -2,6 +2,8 @@ import 'package:groceryapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:groceryapp/registration-screen.dart';
+import 'home_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   static const id = 'login_screen';
@@ -111,6 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     //Implement login functionality.
+                    Navigator.pushNamed(context, HomeScreen.id);
                   },
                   minWidth: 200.0,
                   height: 42.0,
