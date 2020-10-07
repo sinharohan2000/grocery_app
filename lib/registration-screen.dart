@@ -1,6 +1,8 @@
+import 'package:groceryapp/home_screen.dart';
 import 'package:groceryapp/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static String id='registration_screen';
@@ -9,7 +11,8 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> with TickerProviderStateMixin {
-
+  final _auth=FirebaseAuth.instance;
+  String email,password;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +34,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> with TickerProv
               height: 48.0,
             ),
             TextField(
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
                 //Do something with the user input.
+                email=value;
               },
               decoration: InputDecoration(
                 hintText: 'Enter your email',
@@ -55,8 +61,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> with TickerProv
               height: 8.0,
             ),
             TextField(
+              textAlign: TextAlign.center,
+              obscureText: true,
               onChanged: (value) {
                 //Do something with the user input.
+                password=value;
               },
               decoration: InputDecoration(
                 hintText: 'Enter your password',
@@ -85,8 +94,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> with TickerProv
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () {
+                  onPressed: () async{
                     //Implement registration functionality.
+                    try {
+                      final newUser = await _auth
+                          .createUserWithEmailAndPassword(
+                          email: email, password: password);
+                      if(newUser!=null)
+                        Navigator.pushNamed(context, HomeScreen.id);
+                    }
+                    catch(e){
+                      print(e);
+                    }
                   },
                   minWidth: 200.0,
                   height: 42.0,

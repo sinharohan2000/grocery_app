@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:groceryapp/login-page.dart';
 
 
 
@@ -11,7 +13,25 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _indexCurrent=0;
-
+  final _auth=FirebaseAuth.instance;
+  User loggedInUser;
+  @override
+  void initState() {
+    super.initState();
+    getCurrentUser();
+  }
+  void getCurrentUser(){
+    try {
+      final user = _auth.currentUser;
+      if (user != null) {
+        loggedInUser = user;
+        print(loggedInUser.email);
+      }
+    }
+    catch(e){
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +95,10 @@ class _HomeScreenState extends State<HomeScreen> {
             ListTile(
               leading: Icon(Icons.arrow_back),
               title: Text('Logout',style: TextStyle(fontSize: 18),),
-              onTap:() {},
+              onTap:() {
+                _auth.signOut();
+                Navigator.pushNamed(context, LoginScreen.id);
+              },
             )
           ],
         ),

@@ -1,11 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/login-page.dart';
 import 'package:groceryapp/registration-screen.dart';
 import 'package:groceryapp/welcome.dart';
 import 'package:groceryapp/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-void main() {
+void main() async{
   runApp(GroceryApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 }
 
 class GroceryApp extends StatelessWidget {
@@ -26,6 +30,7 @@ class GroceryApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
