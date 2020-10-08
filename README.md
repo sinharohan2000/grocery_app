@@ -1,6 +1,6 @@
 # groceryapp
 
-A new Flutter application.
+A new Flutter app made for customers who want to order their groceries online at their doorstep.
 
 ## Getting Started
 
