@@ -2,33 +2,34 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/login-page.dart';
-
-
+import 'package:groceryapp/map-screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  static String id="home_screen";
+  static String id = "home_screen";
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _indexCurrent=0;
-  final _auth=FirebaseAuth.instance;
+  int _indexCurrent = 0;
+  final _auth = FirebaseAuth.instance;
   User loggedInUser;
+
   @override
   void initState() {
     super.initState();
     getCurrentUser();
   }
-  void getCurrentUser(){
+
+  void getCurrentUser() {
     try {
       final user = _auth.currentUser;
       if (user != null) {
         loggedInUser = user;
         print(loggedInUser.email);
       }
-    }
-    catch(e){
+    } catch (e) {
       print(e);
     }
   }
@@ -36,9 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.brown[50],
       appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.brown[600],
         title: Text('Small Basket'),
         centerTitle: true,
       ),
@@ -58,10 +59,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       margin: EdgeInsets.only(top: 30),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        image: DecorationImage(image: NetworkImage('https://img.favpng.com/14/21/22/dart-programming-language-flutter-object-oriented-programming-png-favpng-riHaX64gXj4juQ8nZjn9im0C8.jpg',
-                        ),
-                            fit: BoxFit.fill
-                        ),
+                        image: DecorationImage(
+                            image: NetworkImage(
+                              'https://img.favpng.com/14/21/22/dart-programming-language-flutter-object-oriented-programming-png-favpng-riHaX64gXj4juQ8nZjn9im0C8.jpg',
+                            ),
+                            fit: BoxFit.fill),
                       ),
                     ),
                     Text(
@@ -84,18 +86,27 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListTile(
               leading: Icon(Icons.person),
-              title: Text('Profile',style: TextStyle(fontSize: 18),),
-              onTap: (){},
+              title: Text(
+                'Profile',
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.settings),
-              title: Text('Settings',style: TextStyle(fontSize: 18),),
-              onTap: (){},
+              title: Text(
+                'Settings',
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {},
             ),
             ListTile(
               leading: Icon(Icons.arrow_back),
-              title: Text('Logout',style: TextStyle(fontSize: 18),),
-              onTap:() {
+              title: Text(
+                'Logout',
+                style: TextStyle(fontSize: 18),
+              ),
+              onTap: () {
                 _auth.signOut();
                 Navigator.pushNamed(context, LoginScreen.id);
               },
@@ -104,47 +115,49 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: Container(
-        child: Card(
-
-        ),
+        child: Card(),
       ),
 
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
+        backgroundColor: Colors.brown[50],
         currentIndex: _indexCurrent,
         type: BottomNavigationBarType.fixed,
         iconSize: 30.0,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: MaterialButton(onPressed: () {}, child: Icon(Icons.home)),
             title: Text('Home'),
             backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_basket),
+            icon: MaterialButton(
+                onPressed: () {}, child: Icon(Icons.shopping_basket)),
             title: Text('Cart'),
             backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.location_on),
+            icon: MaterialButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, MapsScreen.id);
+                },
+                child: Icon(Icons.location_on)),
             title: Text('Location'),
             backgroundColor: Colors.blue,
           ),
+
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: MaterialButton(
+                onPressed: () {
+
+                },
+                child: Icon(Icons.search)),
             title: Text('Search'),
             backgroundColor: Colors.blue,
           ),
         ],
-        onTap: (index){
-          setState(() {
-            _indexCurrent=index;
-          });
-        },
+
       ),
     );
   }
 }
-
-
-
-

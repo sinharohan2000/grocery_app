@@ -1,9 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/login-page.dart';
+import 'package:groceryapp/map-screen.dart';
 import 'package:groceryapp/registration-screen.dart';
 import 'package:groceryapp/welcome.dart';
 import 'package:groceryapp/home_screen.dart';
+import 'package:groceryapp/map-screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async{
@@ -42,9 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
       initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => WelcomeScreen(),
-        LoginScreen.id:(context) => LoginScreen(),
-        RegistrationScreen.id:(context) => RegistrationScreen(),
-        HomeScreen.id:(context) => HomeScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+        HomeScreen.id: (context) => HomeScreen(),
+        MapsScreen.id: (context) => MapsScreen(),
       },
     );
   }
