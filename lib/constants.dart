@@ -22,6 +22,7 @@ const grocery_data= [
   {
     "name":"Fruits",
     "image":"fruits.png"
+
   },{
     "name":"Vegetables",
     "image":"vegetables.png"

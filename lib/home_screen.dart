@@ -50,8 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 Image.asset(
                     //post["image"],
-
                  "images/assets/${post["image"]}",
+                  height: 100.0,
+                  width: 100.0,
 
                   ),
               ],
