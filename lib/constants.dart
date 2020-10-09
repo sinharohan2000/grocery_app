@@ -17,3 +17,26 @@ const kMessageContainerDecoration = BoxDecoration(
     top: BorderSide(color: Colors.lightBlueAccent, width: 2.0),
   ),
 );
+
+const grocery_data= [
+  {
+    "name":"Fruits",
+    "image":"fruits.png"
+  },{
+    "name":"Vegetables",
+    "image":"vegetables.png"
+  },
+  {
+    "name":"Dairy Products",
+    "image":"dairy.png"
+  },
+  {
+    "name":"Mart Products",
+    "image":"supermart.png"
+  },
+  {
+    "name":"Rice & Wheat",
+    "image":"ricewheat.png"
+  },
+
+];
