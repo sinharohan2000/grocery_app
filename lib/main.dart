@@ -5,6 +5,7 @@ import 'package:groceryapp/map-screen.dart';
 import 'package:groceryapp/registration-screen.dart';
 import 'package:groceryapp/welcome.dart';
 import 'package:groceryapp/home_screen.dart';
+import 'package:groceryapp/fruits-screen.dart';
 import 'package:groceryapp/map-screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -48,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         RegistrationScreen.id: (context) => RegistrationScreen(),
         HomeScreen.id: (context) => HomeScreen(),
         MapsScreen.id: (context) => MapsScreen(),
+        FruitScreen.id: (context) => FruitScreen(),
       },
     );
   }

@@ -1,16 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:groceryapp/fruits-screen.dart';
 import 'package:groceryapp/login-page.dart';
 import 'package:groceryapp/map-screen.dart';
-
 import 'package:groceryapp/constants.dart';
-
-
 
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -19,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   int _indexCurrent = 0;
   final _auth = FirebaseAuth.instance;
   User loggedInUser;
-
 
   List<Widget> itemsData = [];
 
@@ -30,9 +26,12 @@ class _HomeScreenState extends State<HomeScreen> {
       listItems.add(Container(
           height: 150,
           margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(20.0)), color: Colors.white, boxShadow: [
-            BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 10.0),
-          ]),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(20.0)),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(color: Colors.black.withAlpha(100), blurRadius: 5.0),
+              ]),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
             child: Row(
@@ -53,7 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
                  "images/assets/${post["image"]}",
                   height: 100.0,
                   width: 100.0,
-
                   ),
               ],
             ),
@@ -65,20 +63,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   }
 
-
   @override
   void initState() {
     super.initState();
     getPostsData();
     getCurrentUser();
-
   }
 
-
-
-
   void getCurrentUser(){
-
     try {
       final user = _auth.currentUser;
       if (user != null) {
@@ -93,9 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       backgroundColor: Colors.brown[50],
-
       appBar: AppBar(
         backgroundColor: Colors.brown[600],
         title: Text('Small Basket'),
@@ -124,20 +114,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             fit: BoxFit.fill),
                       ),
                     ),
-                    Text(
-                      'BOTism.dart',
-                      style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10),
+                      child: Text(
+                        loggedInUser.email,
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                    Text(
-                      'BOTism.dart@gmail.com',
-                      style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
-                      ),
-                    )
                   ],
                 ),
               ),
@@ -173,10 +159,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: Container(
-
         child: Column(
           children: <Widget>[
-
             Expanded(
                 child: ListView.builder(
                     itemCount: itemsData.length,
@@ -220,7 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: MaterialButton(
                 onPressed: () {
-
+                  //Navigator.pushNamed(context, );
                 },
                 child: Icon(Icons.search)),
             title: Text('Search'),
