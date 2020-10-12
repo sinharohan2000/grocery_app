@@ -45,6 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                     ),
                     //adding count and add to wish list
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    RaisedButton(
+                      onPressed: (){},
+                      child: Text('Add to List',style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                      ),),
+                      color: Colors.brown,
+                      ),
                   ],
                 ),
                 Image.asset(
