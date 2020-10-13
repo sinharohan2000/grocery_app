@@ -8,6 +8,7 @@ import 'package:groceryapp/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -34,44 +35,45 @@ class _HomeScreenState extends State<HomeScreen> {
               ]),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+            child: SafeArea(
+              child: FlatButton(
+                onPressed: () {
+                  if (post["name"] == "Fruits") {
+                    Navigator.pushNamed(context, FruitScreen.id);
+                  } else if (post["name"] == "Vegetables") {
+                    //Navigator.pushNamed(context, MapsScreen.id);
+                  } else if (post["name"] == "Dairy Products") {
+                  } else if (post["name"] == "Mart Products") {
+                  } else if (post["name"] == "Rice & Wheat") {}
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text(
-                      post["name"],
-                      style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          post["name"],
+                          style: const TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.bold),
+                        ),
+                        //adding count and add to wish list
+                      ],
                     ),
-                    //adding count and add to wish list
-                    SizedBox(
-                      height: 10.0,
-                    ),
-                    RaisedButton(
-                      onPressed: (){},
-                      child: Text('Add to List',style: TextStyle(
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                      color: Colors.brown,
-                      ),
+                    // Image.asset(
+                    //   //post["image"],
+                    //   "images/assets/${post["image"]}",
+                    //   width: 10.0,
+                    // ),
                   ],
                 ),
-                Image.asset(
-                    //post["image"],
-                 "images/assets/${post["image"]}",
-                  height: 100.0,
-                  width: 100.0,
-                  ),
-              ],
+              ),
             ),
           )));
     });
     setState(() {
-      itemsData=listItems;
+      itemsData = listItems;
     });
-
   }
 
   @override
@@ -81,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
     getCurrentUser();
   }
 
-  void getCurrentUser(){
+  void getCurrentUser() {
     try {
       final user = _auth.currentUser;
       if (user != null) {
@@ -181,9 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     })),
           ],
         ),
-
       ),
-
       bottomNavigationBar: BottomNavigationBar(
         elevation: 10,
         backgroundColor: Colors.brown[50],
@@ -211,7 +211,6 @@ class _HomeScreenState extends State<HomeScreen> {
             title: Text('Location'),
             backgroundColor: Colors.blue,
           ),
-
           BottomNavigationBarItem(
             icon: MaterialButton(
                 onPressed: () {
@@ -222,7 +221,6 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor: Colors.blue,
           ),
         ],
-
       ),
     );
   }
