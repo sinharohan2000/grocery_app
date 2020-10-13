@@ -1,3 +1,6 @@
+import 'package:flutter/gestures.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:groceryapp/authentication.dart';
 import 'package:groceryapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,16 +8,17 @@ import 'package:groceryapp/registration-screen.dart';
 import 'home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-
 class LoginScreen extends StatefulWidget {
   static const id = 'login_screen';
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  final _auth=FirebaseAuth.instance;
+
   String email,password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,11 +33,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 Hero(
                   tag: 'logo',
                   child: Container(
-                    height: 50.0,
-                    child: Image(
-                      image: AssetImage('images/food-delivery.png'),
-                      width: 50.0,
-                    )
+                      height: 50.0,
+                      child: Image(
+                        image: AssetImage('images/food-delivery.png'),
+                        width: 50.0,
+                      )
                   ),
                 ),
                 Container(
@@ -110,28 +114,40 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 24.0,
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
+              child: SizedBox(
+                child: new RichText(
+                  textAlign: TextAlign.right,
+                  text: new TextSpan(
+                    children: [
+                      new TextSpan(
+                        text: 'Don\'t have an account? ',
+                        style: new TextStyle(color: Colors.black),
+                      ),
+                      new TextSpan(
+                        text: 'Signup!',
+                        style: new TextStyle(color: Colors.blue),
+                        recognizer: new TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushNamed(context, RegistrationScreen.id);
+                          },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 16.0),
+              padding: EdgeInsets.symmetric(vertical: 11.0),
               child: Material(
                 color: Colors.brown[700],
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () async{
-                    //Implement login functionality.
-                    try {
-                      final user =await _auth.signInWithEmailAndPassword(email: email, password: password);
-                      if(user!=null){
-                        Navigator.pushNamed(context, HomeScreen.id);
-                      }
-                    }
-                    catch(e){
-                      print(e);
-                    }
-                  },
+                  onPressed: () =>
+                      signin(email, password).whenComplete(() =>
+                          Navigator.pushNamed(context, HomeScreen.id)),
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(
@@ -145,6 +161,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(
               height: 20.0,
+              child: Text(
+                'Or',
+                textAlign: TextAlign.center,
+              ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 50.0),
@@ -153,13 +173,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, RegistrationScreen.id);
-                  },
+                  onPressed: () =>
+                      googleSignIn().whenComplete(() =>
+                          Navigator.pushNamed(context, HomeScreen.id)),
                   minWidth: 10.0,
                   height: 20.0,
                   child: Text(
-                    'Register',
+                    'Login with Google',
                     style: TextStyle(
                       color: Colors.brown[900],
                     ),

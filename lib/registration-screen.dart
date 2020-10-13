@@ -1,3 +1,4 @@
+import 'package:groceryapp/authentication.dart';
 import 'package:groceryapp/home_screen.dart';
 import 'package:groceryapp/main.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static String id='registration_screen';
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -13,6 +15,7 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> with TickerProviderStateMixin {
   final _auth=FirebaseAuth.instance;
   String email,password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,12 +26,31 @@ class _RegistrationScreenState extends State<RegistrationScreen> with TickerProv
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Hero(
-              tag: 'logo',
-              child: Container(
-                height: 50.0,
-                child: Image.asset('images/food-delivery.png'),
-              ),
+            Row(
+              children: <Widget>[
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    height: 50.0,
+                    child: Image.asset('images/food-delivery.png'),
+                  ),
+                ),
+                Container(
+                  margin:
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                  child: Text(
+                    'Signup',
+                    textAlign: TextAlign.right,
+                    style: TextStyle(
+                      fontFamily: 'SansitaSwashed',
+                      color: Colors.brown[500],
+                      fontSize: 30.0,
+                      letterSpacing: 2.5,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
+              ],
             ),
             SizedBox(
               height: 48.0,
@@ -38,7 +60,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> with TickerProv
               keyboardType: TextInputType.emailAddress,
               onChanged: (value) {
                 //Do something with the user input.
-                email=value;
+                email = value;
               },
               decoration: InputDecoration(
                 hintText: 'Enter your email',
@@ -94,19 +116,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> with TickerProv
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () async{
-                    //Implement registration functionality.
-                    try {
-                      final newUser = await _auth
-                          .createUserWithEmailAndPassword(
-                          email: email, password: password);
-                      if(newUser!=null)
-                        Navigator.pushNamed(context, HomeScreen.id);
-                    }
-                    catch(e){
-                      print(e);
-                    }
-                  },
+                  onPressed: () =>
+                      signup(email, password).whenComplete(() =>
+                          Navigator.pushNamed(context, HomeScreen.id)),
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(

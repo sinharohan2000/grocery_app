@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:groceryapp/authentication.dart';
 import 'package:groceryapp/fruits-screen.dart';
 import 'package:groceryapp/login-page.dart';
 import 'package:groceryapp/map-screen.dart';
@@ -163,15 +164,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 'Logout',
                 style: TextStyle(fontSize: 18),
               ),
-              onTap: () {
-                _auth.signOut();
-                Navigator.pushNamed(context, LoginScreen.id);
-              },
+              onTap: () => signOutUser().whenComplete(
+                  () => Navigator.pushNamed(context, LoginScreen.id)),
             )
           ],
         ),
       ),
       body: Container(
+        //decoration: ,
         child: Column(
           children: <Widget>[
             Expanded(
