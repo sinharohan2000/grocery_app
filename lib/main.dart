@@ -1,11 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:groceryapp/cart.dart';
+import 'package:groceryapp/checkout-screen.dart';
 import 'package:groceryapp/login-page.dart';
 import 'package:groceryapp/map-screen.dart';
+import 'package:groceryapp/product-model.dart';
 import 'package:groceryapp/registration-screen.dart';
 import 'package:groceryapp/welcome.dart';
 import 'package:groceryapp/home_screen.dart';
 import 'package:groceryapp/fruits-screen.dart';
+import 'package:groceryapp/checkout-screen.dart';
 import 'package:groceryapp/map-screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -38,6 +42,9 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 class _MyHomePageState extends State<MyHomePage> {
+  List<ProductModel> cart;
+  ValueSetter<ProductModel> _valueSetter;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,7 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
         RegistrationScreen.id: (context) => RegistrationScreen(),
         HomeScreen.id: (context) => HomeScreen(),
         MapsScreen.id: (context) => MapsScreen(),
-        FruitScreen.id: (context) => FruitScreen(),
+        FruitScreen.id: (context) => FruitScreen(_valueSetter),
+        CheckoutScreen.id: (context) => CheckoutScreen(),
+        Cart.id: (context) => Cart(cart),
       },
     );
   }

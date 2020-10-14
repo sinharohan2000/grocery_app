@@ -25,7 +25,7 @@ Future<bool> signin(String email, String password) async {
   try {
     UserCredential result = await _auth.signInWithEmailAndPassword(
         email: email, password: password);
-    //User user = result.user;
+    User user = result.user;
     return Future.value(true);
   } catch (e) {
     print(e);
@@ -47,6 +47,7 @@ Future<bool> signOutUser() async {
   User user = await _auth.currentUser;
   if (user.providerData[1].providerId == 'google.com') {
     await googleSignInVar.disconnect();
+    await googleSignInVar.signOut();
   }
 
   await _auth.signOut();

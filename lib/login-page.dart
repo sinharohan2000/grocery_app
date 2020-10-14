@@ -145,9 +145,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 borderRadius: BorderRadius.all(Radius.circular(30.0)),
                 elevation: 5.0,
                 child: MaterialButton(
-                  onPressed: () =>
-                      signin(email, password).whenComplete(() =>
-                          Navigator.pushNamed(context, HomeScreen.id)),
+                  onPressed: () async {
+                    await signin(email, password);
+                    Navigator.pushNamed(context, HomeScreen.id);
+                  },
                   minWidth: 200.0,
                   height: 42.0,
                   child: Text(

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/authentication.dart';
+import 'package:groceryapp/cart.dart';
 import 'package:groceryapp/fruits-screen.dart';
 import 'package:groceryapp/login-page.dart';
 import 'package:groceryapp/map-screen.dart';
@@ -198,7 +199,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: MaterialButton(
-                onPressed: () {}, child: Icon(Icons.shopping_basket)),
+                onPressed: () {
+                  Navigator.pushNamed(context, Cart.id);
+                },
+                child: Icon(Icons.shopping_basket)),
             title: Text('Cart'),
             backgroundColor: Colors.blue,
           ),
