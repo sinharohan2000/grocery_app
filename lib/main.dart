@@ -1,17 +1,18 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:groceryapp/cart.dart';
 import 'package:groceryapp/models/product-model.dart';
 import 'package:groceryapp/screens/checkout-screen.dart';
 import 'package:groceryapp/screens/login-page.dart';
 import 'package:groceryapp/screens/map-screen.dart';
 import 'package:groceryapp/screens/registration-screen.dart';
+import 'package:groceryapp/screens/vegetables_screen.dart';
+import 'package:groceryapp/screens/dairy-screen.dart';
+import 'package:groceryapp/screens/mart-screen.dart';
+import 'package:groceryapp/screens/grains-screen.dart';
 import 'package:groceryapp/welcome.dart';
 import 'package:groceryapp/screens/home_screen.dart';
 import 'package:groceryapp/screens/fruits-screen.dart';
 import 'package:provider/provider.dart';
-
-import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   runApp(GroceryApp());
@@ -63,8 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
           HomeScreen.id: (context) => HomeScreen(),
           MapsScreen.id: (context) => MapsScreen(),
           FruitScreen.id: (context) => FruitScreen(),
+          VegetablesScreen.id: (context) => VegetablesScreen(),
+          DairyScreen.id: (context) => DairyScreen(),
+          MartScreen.id: (context) => MartScreen(),
+          GrainsScreen.id: (context) => GrainsScreen(),
           CheckoutScreen.id: (context) => CheckoutScreen(),
-          //Cart.id: (context) => Cart(cart),
         },
       ),
     );

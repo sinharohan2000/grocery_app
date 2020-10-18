@@ -3,10 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/authentication.dart';
 import 'package:groceryapp/cart.dart';
-import 'file:///E:/Flutter/grocery_app/lib/screens/fruits-screen.dart';
-import 'file:///E:/Flutter/grocery_app/lib/screens/login-page.dart';
-import 'file:///E:/Flutter/grocery_app/lib/screens/map-screen.dart';
+import 'package:groceryapp/screens/fruits-screen.dart';
+import 'package:groceryapp/screens/login-page.dart';
+import 'package:groceryapp/screens/map-screen.dart';
 import 'package:groceryapp/constants.dart';
+import 'package:groceryapp/screens/vegetables_screen.dart';
+import 'package:groceryapp/screens/dairy-screen.dart';
+import 'package:groceryapp/screens/mart-screen.dart';
+import 'package:groceryapp/screens/grains-screen.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
@@ -43,10 +47,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (post["name"] == "Fruits") {
                     Navigator.pushNamed(context, FruitScreen.id);
                   } else if (post["name"] == "Vegetables") {
-                    //Navigator.pushNamed(context, MapsScreen.id);
+                    Navigator.pushNamed(context, VegetablesScreen.id);
                   } else if (post["name"] == "Dairy Products") {
+                    Navigator.pushNamed(context, DairyScreen.id);
                   } else if (post["name"] == "Mart Products") {
-                  } else if (post["name"] == "Rice & Wheat") {}
+                    Navigator.pushNamed(context, MartScreen.id);
+                  } else {
+                    Navigator.pushNamed(context, GrainsScreen.id);
+                  }
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

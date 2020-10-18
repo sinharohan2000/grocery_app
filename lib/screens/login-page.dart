@@ -1,12 +1,9 @@
 import 'package:flutter/gestures.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:groceryapp/authentication.dart';
-import 'package:groceryapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'file:///E:/Flutter/grocery_app/lib/screens/registration-screen.dart';
-import 'home_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:groceryapp/screens/registration-screen.dart';
+import 'package:groceryapp/screens/home_screen.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,7 +14,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-
   String email,password;
   bool showSpinner=false;
 
@@ -186,9 +182,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(30.0)),
                   elevation: 5.0,
                   child: MaterialButton(
-                    onPressed: () =>
-                        googleSignIn().whenComplete(() =>
-                            Navigator.pushNamed(context, HomeScreen.id)),
+                    onPressed: () {
+                      setState(() {
+                        showSpinner = true;
+                      });
+                      googleSignIn().whenComplete(() =>
+                          Navigator.pushNamed(context, HomeScreen.id));
+                      setState(() {
+                        showSpinner = false;
+                      });
+                    },
                     minWidth: 10.0,
                     height: 20.0,
                     child: Text(

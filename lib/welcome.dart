@@ -1,8 +1,6 @@
-import 'package:groceryapp/main.dart';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///E:/Flutter/grocery_app/lib/screens/login-page.dart';
+import 'package:groceryapp/screens/login-page.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static const String id = 'welcome_screen';

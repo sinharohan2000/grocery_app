@@ -1,6 +1,4 @@
-import 'package:groceryapp/authentication.dart';
-import 'file:///E:/Flutter/grocery_app/lib/screens/home_screen.dart';
-import 'package:groceryapp/main.dart';
+import 'package:groceryapp/screens/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';

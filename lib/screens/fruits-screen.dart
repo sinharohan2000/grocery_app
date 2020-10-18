@@ -4,6 +4,7 @@ import 'package:groceryapp/models/product-model.dart';
 import 'package:groceryapp/widgets/pdt_item.dart';
 import 'package:provider/provider.dart';
 import 'package:groceryapp/screens/login-page.dart';
+import 'package:groceryapp/screens/home_screen.dart';
 //import 'package:groceryapp/cart.dart';
 
 class FruitScreen extends StatefulWidget {
@@ -33,11 +34,17 @@ class _FruitScreenState extends State<FruitScreen> {
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<Products>(context);
-    final pdts = productData.items;
+    final pdts = productData
+        .items; //a variable to contain the product that is retrieved from product-Model.dart
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown[600],
-        title: Text('Small Basket'),
+        backgroundColor: Colors.yellow[800],
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pushNamed(context, HomeScreen.id);
+            }),
+        title: Text('Fruits'),
         centerTitle: true,
       ),
       drawer: Drawer(

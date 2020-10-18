@@ -8,8 +8,22 @@ class productItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridTile(
-      child: Image.network(imageUrl),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GridTile(
+        child: Image.network(imageUrl),
+        footer: GridTileBar(
+          title: Text(name),
+          trailing: IconButton(
+            icon: Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+            onPressed: null,
+          ),
+          backgroundColor: Colors.brown[700],
+        ),
+      ),
     );
   }
 }

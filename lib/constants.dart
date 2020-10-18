@@ -35,9 +35,6 @@ const grocery_data= [
     "name":"Mart Products",
     "image":"supermart.png"
   },
-  {
-    "name":"Rice & Wheat",
-    "image":"ricewheat.png"
-  },
+  {"name": "Grains and Pulses", "image": "ricewheat.png"},
 
 ];
