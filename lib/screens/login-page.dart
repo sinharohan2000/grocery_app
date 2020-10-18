@@ -4,7 +4,7 @@ import 'package:groceryapp/authentication.dart';
 import 'package:groceryapp/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:groceryapp/registration-screen.dart';
+import 'file:///E:/Flutter/grocery_app/lib/screens/registration-screen.dart';
 import 'home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';

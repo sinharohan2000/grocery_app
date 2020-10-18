@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/authentication.dart';
 import 'package:groceryapp/cart.dart';
-import 'package:groceryapp/fruits-screen.dart';
-import 'package:groceryapp/login-page.dart';
-import 'package:groceryapp/map-screen.dart';
+import 'file:///E:/Flutter/grocery_app/lib/screens/fruits-screen.dart';
+import 'file:///E:/Flutter/grocery_app/lib/screens/login-page.dart';
+import 'file:///E:/Flutter/grocery_app/lib/screens/map-screen.dart';
 import 'package:groceryapp/constants.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -200,7 +200,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: MaterialButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, Cart.id);
+                  //Navigator.pushNamed(context, Cart.id);
                 },
                 child: Icon(Icons.shopping_basket)),
             title: Text('Cart'),

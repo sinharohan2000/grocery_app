@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceryapp/home_screen.dart';
-import 'package:groceryapp/login-page.dart';
-import 'package:groceryapp/product-model.dart';
-import 'package:groceryapp/cart.dart';
+import 'package:groceryapp/models/product-model.dart';
+import 'package:groceryapp/widgets/pdt_item.dart';
+import 'package:provider/provider.dart';
+import 'package:groceryapp/screens/login-page.dart';
+//import 'package:groceryapp/cart.dart';
 
 class FruitScreen extends StatefulWidget {
   static String id = "fruit_screen";
-  final ValueSetter<ProductModel> _valueSetter;
-
-  FruitScreen(this._valueSetter);
 
   @override
   _FruitScreenState createState() => _FruitScreenState();
@@ -32,16 +30,10 @@ class _FruitScreenState extends State<FruitScreen> {
     }
   }
 
-  final List<ProductModel> fruits = [
-    ProductModel("Mango", 80),
-    ProductModel("Banana", 50),
-    ProductModel("Watermelon", 100),
-    ProductModel("Pineapple", 60),
-    ProductModel("Apple", 40),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final productData = Provider.of<Products>(context);
+    final pdts = productData.items;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.brown[600],
@@ -117,18 +109,23 @@ class _FruitScreenState extends State<FruitScreen> {
         ),
       ),
       body: Container(
-          child: ListView.separated(
-        itemBuilder: (context, index) {
-          return ListTile(
-            title: Text("${fruits[index].productName}"),
-            trailing: Text("Rs. ${fruits[index].price}"),
-            onTap: () {},
-          );
-        },
-        separatorBuilder: (context, index) {
-          return Divider();
-        },
-        itemCount: fruits.length,
+          child: GridView.builder(
+        physics: BouncingScrollPhysics(),
+        itemCount: pdts.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+          value: pdts[i],
+          child: Card(
+            elevation: 2.0,
+            child: productItem(
+              name: pdts[i].productName,
+              imageUrl: pdts[i].imgUrl,
+              //Todo: classify the categories and their products in their respective screens
+            ),
+          ),
+        ),
       )),
     );
   }
