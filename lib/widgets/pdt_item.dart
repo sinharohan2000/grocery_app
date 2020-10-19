@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-class ProductItem extends StatelessWidget {
+class ProductItems extends StatelessWidget {
   final String name;
   final String imageUrl;
 
-  ProductItem({this.name, this.imageUrl});
+  ProductItems({this.name, this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
