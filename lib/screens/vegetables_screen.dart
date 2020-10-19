@@ -124,7 +124,7 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
           value: vegetableProducts[i],
           child: Card(
             elevation: 2.0,
-            child: productItem(
+            child: ProductItems(
               name: vegetableProducts[i].productName,
               imageUrl: vegetableProducts[i].imgUrl,
               //Todo: classify the categories and their products in their respective screens

@@ -57,7 +57,7 @@ class _DairyScreenState extends State<DairyScreen> {
                 value: dairyProducts[i],
                 child: Card(
                   elevation: 2.0,
-                  child: productItem(
+                  child: ProductItems(
                     name: dairyProducts[i].productName,
                     imageUrl: dairyProducts[i].imgUrl,
                     //Todo: classify the categories and their products in their respective screens

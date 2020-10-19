@@ -57,7 +57,7 @@ class _GrainsScreenState extends State<GrainsScreen> {
                   value: grainsProducts[i],
                   child: Card(
                     elevation: 2.0,
-                    child: ProductItem(
+                    child: ProductItems(
                       name: grainsProducts[i].productName,
                       imageUrl: grainsProducts[i].imgUrl,
                     ),
