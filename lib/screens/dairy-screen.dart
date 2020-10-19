@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceryapp/models/product-model.dart';
+import 'package:groceryapp/widgets/drawerUI.dart';
 import 'package:groceryapp/widgets/pdt_item.dart';
 import 'package:provider/provider.dart';
 import 'package:groceryapp/screens/home_screen.dart';
@@ -44,27 +45,26 @@ class _DairyScreenState extends State<DairyScreen> {
         title: Text('Dairy Products'),
         centerTitle: true,
       ),
-
-    body: Container(
-        child: GridView.builder(
-          physics: BouncingScrollPhysics(),
-          itemCount: dairyProducts.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+      drawer: DrawerUI(),
+      body: Container(
+          child: GridView.builder(
+        physics: BouncingScrollPhysics(),
+        itemCount: dairyProducts.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+          value: dairyProducts[i],
+          child: Card(
+            elevation: 2.0,
+            child: productItem(
+              name: dairyProducts[i].productName,
+              imageUrl: dairyProducts[i].imgUrl,
+              //Todo: classify the categories and their products in their respective screens
+            ),
           ),
-          itemBuilder: (ctx, i) =>
-              ChangeNotifierProvider.value(
-                value: dairyProducts[i],
-                child: Card(
-                  elevation: 2.0,
-                  child: productItem(
-                    name: dairyProducts[i].productName,
-                    imageUrl: dairyProducts[i].imgUrl,
-                    //Todo: classify the categories and their products in their respective screens
-                  ),
-                ),
-              ),
-        )),
+        ),
+      )),
     );
   }
 }

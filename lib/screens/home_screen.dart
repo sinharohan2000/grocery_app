@@ -11,6 +11,7 @@ import 'package:groceryapp/screens/vegetables_screen.dart';
 import 'package:groceryapp/screens/dairy-screen.dart';
 import 'package:groceryapp/screens/mart-screen.dart';
 import 'package:groceryapp/screens/grains-screen.dart';
+import 'package:groceryapp/widgets/drawerUI.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
@@ -114,73 +115,13 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Small Basket'),
         centerTitle: true,
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              color: Theme.of(context).primaryColor,
-              child: Center(
-                child: Column(
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      margin: EdgeInsets.only(top: 30),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              'https://img.favpng.com/14/21/22/dart-programming-language-flutter-object-oriented-programming-png-favpng-riHaX64gXj4juQ8nZjn9im0C8.jpg',
-                            ),
-                            fit: BoxFit.fill),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Text(
-                        loggedInUser.email,
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text(
-                'Profile',
-                style: TextStyle(fontSize: 18),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                'Settings',
-                style: TextStyle(fontSize: 18),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.arrow_back),
-              title: Text(
-                'Logout',
-                style: TextStyle(fontSize: 18),
-              ),
-              onTap: () => signOutUser().whenComplete(
-                  () => Navigator.pushNamed(context, LoginScreen.id)),
-            )
-          ],
-        ),
-      ),
+      drawer: DrawerUI(),
       body: Container(
-        //decoration: ,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: AssetImage('images/assets/background.jpg'),
+          fit: BoxFit.cover,
+        )),
         child: Column(
           children: <Widget>[
             Expanded(
@@ -193,47 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        elevation: 10,
-        backgroundColor: Colors.brown[50],
-        currentIndex: _indexCurrent,
-        type: BottomNavigationBarType.fixed,
-        iconSize: 30.0,
-        items: [
-          BottomNavigationBarItem(
-            icon: MaterialButton(onPressed: () {}, child: Icon(Icons.home)),
-            title: Text('Home'),
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: MaterialButton(
-                onPressed: () {
-                  //Navigator.pushNamed(context, Cart.id);
-                },
-                child: Icon(Icons.shopping_basket)),
-            title: Text('Cart'),
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: MaterialButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, MapsScreen.id);
-                },
-                child: Icon(Icons.location_on)),
-            title: Text('Location'),
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: MaterialButton(
-                onPressed: () {
-                  //Navigator.pushNamed(context, );
-                },
-                child: Icon(Icons.search)),
-            title: Text('Search'),
-            backgroundColor: Colors.blue,
-          ),
-        ],
-      ),
+
     );
   }
 }
