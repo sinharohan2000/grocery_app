@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceryapp/models/product-model.dart';
+import 'package:groceryapp/models/product-model3.dart';
 import 'package:groceryapp/widgets/pdt_item.dart';
 import 'package:provider/provider.dart';
 import 'package:groceryapp/screens/home_screen.dart';
@@ -31,7 +31,7 @@ class _DairyScreenState extends State<DairyScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final productData = Provider.of<Products>(context);
+    final productData = Provider.of<Products3>(context);
     final dairyProducts = productData.items;
     return Scaffold(
       appBar: AppBar(

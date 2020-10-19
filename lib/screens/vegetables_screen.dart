@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceryapp/models/product-model.dart';
+import 'package:groceryapp/models/product-model2.dart';
 import 'package:groceryapp/widgets/pdt_item.dart';
 import 'package:provider/provider.dart';
 import 'package:groceryapp/screens/login-page.dart';
@@ -31,7 +31,7 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final productData = Provider.of<Products>(context);
+    final productData = Provider.of<Products2>(context);
     final vegetableProducts = productData
         .items; //a variable to contain the product that is retrieved from product-Model.dart
     return Scaffold(
