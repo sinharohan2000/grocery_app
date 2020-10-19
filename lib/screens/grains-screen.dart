@@ -7,7 +7,7 @@ import 'package:groceryapp/screens/home_screen.dart';
 import 'package:groceryapp/screens/login-page.dart';
 
 class GrainsScreen extends StatefulWidget {
-  static String id = "mart_screen";
+  static String id = "grains_screen";
 
   @override
   _GrainsScreenState createState() => _GrainsScreenState();

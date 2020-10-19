@@ -32,7 +32,7 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<Products>(context);
-    final pdts = productData
+    final vegetableProducts = productData
         .items; //a variable to contain the product that is retrieved from product-Model.dart
     return Scaffold(
       appBar: AppBar(
@@ -116,22 +116,21 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
       body: Container(
           child: GridView.builder(
             physics: BouncingScrollPhysics(),
-            itemCount: pdts.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+        itemCount: vegetableProducts.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+          value: vegetableProducts[i],
+          child: Card(
+            elevation: 2.0,
+            child: productItem(
+              name: vegetableProducts[i].productName,
+              imageUrl: vegetableProducts[i].imgUrl,
+              //Todo: classify the categories and their products in their respective screens
             ),
-            itemBuilder: (ctx, i) =>
-                ChangeNotifierProvider.value(
-                  value: pdts[i],
-                  child: Card(
-                    elevation: 2.0,
-                    child: productItem(
-                      name: pdts[i].productName,
-                      imageUrl: pdts[i].imgUrl,
-                      //Todo: classify the categories and their products in their respective screens
-                    ),
-                  ),
-                ),
+          ),
+        ),
           )),
     );
   }

@@ -32,35 +32,34 @@ class _DairyScreenState extends State<DairyScreen> {
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<Products>(context);
-    final pdts = productData
-        .items;
+    final dairyProducts = productData.items;
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.lightBlue[200],
-          leading: IconButton(
-              icon: Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                Navigator.pushNamed(context, HomeScreen.id);
-              }),
-          title: Text('Dairy Products'),
-          centerTitle: true,
-        ),
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlue[200],
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios),
+            onPressed: () {
+              Navigator.pushNamed(context, HomeScreen.id);
+            }),
+        title: Text('Dairy Products'),
+        centerTitle: true,
+      ),
 
     body: Container(
         child: GridView.builder(
           physics: BouncingScrollPhysics(),
-          itemCount: pdts.length,
+          itemCount: dairyProducts.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
           ),
           itemBuilder: (ctx, i) =>
               ChangeNotifierProvider.value(
-                value: pdts[i],
+                value: dairyProducts[i],
                 child: Card(
                   elevation: 2.0,
                   child: productItem(
-                    name: pdts[i].productName,
-                    imageUrl: pdts[i].imgUrl,
+                    name: dairyProducts[i].productName,
+                    imageUrl: dairyProducts[i].imgUrl,
                     //Todo: classify the categories and their products in their respective screens
                   ),
                 ),

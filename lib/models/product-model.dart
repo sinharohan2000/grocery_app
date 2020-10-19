@@ -99,33 +99,57 @@ class Products with ChangeNotifier {
     )
   ];
 
-  var _fruitscheck=true;
+  var _fruitscheck = true;
+  var _vegCheck = true;
+  var _dairyCheck = false;
+  var _martCheck = false;
+  var _grainCheck = false;
 
   List<ProductModel> get items {
-    if(_fruitscheck){
-      final List<ProductModel>fruitprod=[];
+    if (_fruitscheck) {
+      final List<ProductModel> fruitprod = [];
       _items.forEach((prod) {
-        if(prod.category=='Fruits') {
-          fruitprod.add(ProductModel(id: prod.id,
+        if (prod.category == 'Fruits') {
+          fruitprod.add(ProductModel(
+              id: prod.id,
+              productName: prod.productName,
+              category: prod.category,
+              price: prod.price,
+              imgUrl: prod.imgUrl));
+        } else if (prod.category == 'Vegetables') {
+          showVegetablesOnly();
+        }
+      });
+      _items = fruitprod;
+      print(_items);
+      return [..._items];
+    }
+    if (_vegCheck) {
+      final List<ProductModel> vegprod = [];
+      _items.forEach((prod) {
+        if (prod.category == 'Vegetables') {
+          vegprod.add(ProductModel(
+              id: prod.id,
               productName: prod.productName,
               category: prod.category,
               price: prod.price,
               imgUrl: prod.imgUrl));
         }
       });
-
-      _items=fruitprod;
+      _items = vegprod;
       print(_items);
       return [..._items];
     }
-    // else if{
-    //
-    // }
-    return [..._items];
+    //return [..._items];
   }
 
-  void showFruitsOnly(){
-       _fruitscheck=true;
-       notifyListeners();
+  void showFruitsOnly() {
+    _fruitscheck = true;
+    notifyListeners();
+  }
+
+  void showVegetablesOnly() {
+    _vegCheck = true;
+    notifyListeners();
   }
 }

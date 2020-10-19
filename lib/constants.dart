@@ -24,17 +24,8 @@ const grocery_data= [
     "image":"fruits.png"
 
   },{
-    "name":"Vegetables",
-    "image":"vegetables.png"
-  },
-  {
-    "name":"Dairy Products",
-    "image":"dairy.png"
-  },
-  {
-    "name":"Mart Products",
-    "image":"supermart.png"
-  },
+    "name":"Vegetables", "image": "vegetables.png"},
+  {"name": "Dairy Products", "image": "dairy.png"},
+  {"name": "Mart Products", "image": "supermart.png"},
   {"name": "Grains and Pulses", "image": "ricewheat.png"},
-
 ];
