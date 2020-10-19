@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceryapp/models/product-model.dart';
+import 'package:groceryapp/widgets/drawerUI.dart';
 import 'package:groceryapp/widgets/pdt_item.dart';
 import 'package:provider/provider.dart';
 import 'package:groceryapp/screens/login-page.dart';
@@ -47,10 +48,10 @@ class _FruitScreenState extends State<FruitScreen> {
         title: Text('Fruits'),
         centerTitle: true,
       ),
-
+      drawer: DrawerUI(),
       body: Container(
           child: GridView.builder(
-            physics: BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         itemCount: fruitProducts.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
