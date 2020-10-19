@@ -12,19 +12,42 @@ class ProductItems extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GridTile(
-        child: Image.network(imageUrl),
-        footer: GridTileBar(
-          title: Text(name),
-          trailing: FlatButton(
-            child: IconButton(
-              icon: Icon(
-                Icons.add,
-                color: Colors.white,
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: Container(
+                child: Image.network(imageUrl),
               ),
-              onPressed: (){},
             ),
-          ),
-          backgroundColor: Colors.brown[700],
+            Card(
+              color: Colors.brown[50],
+              child: Expanded(
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          name,
+                        ),
+                        Expanded(
+                          child: MaterialButton(
+                            onPressed: () {},
+                            child: Icon(
+                              Icons.add,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+            )
+          ],
         ),
       ),
     );

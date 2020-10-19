@@ -114,6 +114,17 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.brown[600],
         title: Text('Small Basket'),
         centerTitle: true,
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(right: 10),
+            child: GestureDetector(
+              onTap: () {},
+              child: Icon(
+                Icons.shopping_cart,
+              ),
+            ),
+          )
+        ],
       ),
       drawer: DrawerUI(),
       body: Container(

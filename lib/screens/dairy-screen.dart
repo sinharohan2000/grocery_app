@@ -5,6 +5,7 @@ import 'package:groceryapp/widgets/pdt_item.dart';
 import 'package:provider/provider.dart';
 import 'package:groceryapp/screens/home_screen.dart';
 import 'package:groceryapp/screens/login-page.dart';
+import 'package:groceryapp/widgets/drawerUI.dart';
 
 class DairyScreen extends StatefulWidget {
   static String id = "dairy_screen";
@@ -44,18 +45,20 @@ class _DairyScreenState extends State<DairyScreen> {
         title: Text('Dairy Products'),
         centerTitle: true,
       ),
-
-    body: Container(
-        child: GridView.builder(
-          physics: BouncingScrollPhysics(),
-          itemCount: dairyProducts.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-          ),
-          itemBuilder: (ctx, i) =>
-              ChangeNotifierProvider.value(
-                value: dairyProducts[i],
-                child: Card(
+      drawer: DrawerUI(),
+      body: Container(
+          child: GridView.builder(
+        physics: BouncingScrollPhysics(),
+        itemCount: dairyProducts.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
+        itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+          value: dairyProducts[i],
+          child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                   elevation: 2.0,
                   child: ProductItems(
                     name: dairyProducts[i].productName,
