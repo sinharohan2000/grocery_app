@@ -13,6 +13,11 @@ import 'package:groceryapp/welcome.dart';
 import 'package:groceryapp/screens/home_screen.dart';
 import 'package:groceryapp/screens/fruits-screen.dart';
 import 'package:provider/provider.dart';
+import 'package:groceryapp/models/product-model2.dart';
+import 'package:groceryapp/models/product-model3.dart';
+import 'package:groceryapp/models/product-model4.dart';
+import 'package:groceryapp/models/product-model5.dart';
+
 
 void main() async {
   runApp(GroceryApp());
@@ -43,8 +48,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 class _MyHomePageState extends State<MyHomePage> {
-  List<ProductModel> cart;
-  ValueSetter<ProductModel> _valueSetter;
+
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +56,23 @@ class _MyHomePageState extends State<MyHomePage> {
       providers: [
         ChangeNotifierProvider.value(
           value: Products(),
-        )
+        ),
+
+        ChangeNotifierProvider.value(
+          value: Products2(),
+        ),
+
+        ChangeNotifierProvider.value(
+          value: Products3(),
+        ),
+
+        ChangeNotifierProvider.value(
+          value: Products4(),
+        ),
+
+        ChangeNotifierProvider.value(
+          value: Products5(),
+        ),
       ],
       child: MaterialApp(
         theme: ThemeData.light(),

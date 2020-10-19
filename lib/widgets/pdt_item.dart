@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-class productItem extends StatelessWidget {
+class ProductItem extends StatelessWidget {
   final String name;
   final String imageUrl;
 
-  productItem({this.name, this.imageUrl});
+  ProductItem({this.name, this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +15,14 @@ class productItem extends StatelessWidget {
         child: Image.network(imageUrl),
         footer: GridTileBar(
           title: Text(name),
-          trailing: IconButton(
-            icon: Icon(
-              Icons.add,
-              color: Colors.white,
+          trailing: FlatButton(
+            child: IconButton(
+              icon: Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+              onPressed: (){},
             ),
-            onPressed: (){},
           ),
           backgroundColor: Colors.brown[700],
         ),

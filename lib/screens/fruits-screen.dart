@@ -59,7 +59,7 @@ class _FruitScreenState extends State<FruitScreen> {
           value: fruitProducts[i],
           child: Card(
             elevation: 2.0,
-            child: productItem(
+            child: ProductItem(
               name: fruitProducts[i].productName,
               imageUrl: fruitProducts[i].imgUrl,
 

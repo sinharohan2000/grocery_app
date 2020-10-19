@@ -52,9 +52,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.pushNamed(context, DairyScreen.id);
                   } else if (post["name"] == "Mart Products") {
                     Navigator.pushNamed(context, MartScreen.id);
-                  } else if (post["name"] == "Grains & Pulses") {
+                  } else
                     Navigator.pushNamed(context, GrainsScreen.id);
-                  }
+
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
