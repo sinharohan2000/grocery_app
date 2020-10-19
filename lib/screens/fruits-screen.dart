@@ -47,74 +47,7 @@ class _FruitScreenState extends State<FruitScreen> {
         title: Text('Fruits'),
         centerTitle: true,
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.all(20),
-              color: Theme.of(context).primaryColor,
-              child: Center(
-                child: Column(
-                  children: [
-                    Container(
-                      width: 100,
-                      height: 100,
-                      margin: EdgeInsets.only(top: 30),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: NetworkImage(
-                              'https://img.favpng.com/14/21/22/dart-programming-language-flutter-object-oriented-programming-png-favpng-riHaX64gXj4juQ8nZjn9im0C8.jpg',
-                            ),
-                            fit: BoxFit.fill),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Text(
-                        //loggedInUser.email,
-                        '',
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.person),
-              title: Text(
-                'Profile',
-                style: TextStyle(fontSize: 18),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                'Settings',
-                style: TextStyle(fontSize: 18),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: Icon(Icons.arrow_back),
-              title: Text(
-                'Logout',
-                style: TextStyle(fontSize: 18),
-              ),
-              onTap: () {
-                _auth.signOut();
-                Navigator.pushNamed(context, LoginScreen.id);
-              },
-            )
-          ],
-        ),
-      ),
+
       body: Container(
           child: GridView.builder(
         physics: BouncingScrollPhysics(),
@@ -123,12 +56,14 @@ class _FruitScreenState extends State<FruitScreen> {
           crossAxisCount: 2,
         ),
         itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+
           value: pdts[i],
           child: Card(
             elevation: 2.0,
             child: productItem(
               name: pdts[i].productName,
               imageUrl: pdts[i].imgUrl,
+
               //Todo: classify the categories and their products in their respective screens
             ),
           ),

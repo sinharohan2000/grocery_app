@@ -99,7 +99,33 @@ class Products with ChangeNotifier {
     )
   ];
 
+  var _fruitscheck=true;
+
   List<ProductModel> get items {
+    if(_fruitscheck){
+      final List<ProductModel>fruitprod=[];
+      _items.forEach((prod) {
+        if(prod.category=='Fruits') {
+          fruitprod.add(ProductModel(id: prod.id,
+              productName: prod.productName,
+              category: prod.category,
+              price: prod.price,
+              imgUrl: prod.imgUrl));
+        }
+      });
+
+      _items=fruitprod;
+      print(_items);
+      return [..._items];
+    }
+    // else if{
+    //
+    // }
     return [..._items];
+  }
+
+  void showFruitsOnly(){
+       _fruitscheck=true;
+       notifyListeners();
   }
 }
