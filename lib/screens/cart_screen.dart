@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
-
+import 'package:groceryapp/models/orders.dart';
 import 'package:groceryapp/cart.dart';
 import 'package:groceryapp/widgets/cart_item.dart';
 
@@ -32,15 +32,35 @@ class CartScreen extends StatelessWidget {
                     cart.items.values.toList()[i].quantity,
                     cart.items.values.toList()[i].name)),
           ),
-          FlatButton(
-              onPressed: () {
-              },
-              child: Text(
-                'Checkout',
-                style: TextStyle(color: Colors.blue, fontSize: 20),
-              ))
+          CheckoutButton(
+            cart: cart,
+          ),
         ],
       ),
+    );
+  }
+}
+
+class CheckoutButton extends StatefulWidget {
+  final Cart cart;
+
+  const CheckoutButton({@required this.cart});
+  @override
+  _CheckoutButtonState createState() => _CheckoutButtonState();
+}
+
+class _CheckoutButtonState extends State<CheckoutButton> {
+  @override
+  Widget build(BuildContext context) {
+    return FlatButton(
+      child: Text('Checkout'),
+      onPressed: widget.cart.totalAmount <= 0
+          ? null
+          : () async {
+        await Provider.of<Orders>(context, listen: false).addOrder(
+            widget.cart.items.values.toList(), widget.cart.totalAmount);
+        widget.cart.clear();
+      },
     );
   }
 }

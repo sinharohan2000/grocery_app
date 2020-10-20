@@ -19,6 +19,7 @@ import 'package:groceryapp/models/product-model4.dart';
 import 'package:groceryapp/models/product-model5.dart';
 import 'package:groceryapp/screens/cart_screen.dart';
 import 'package:groceryapp/cart.dart';
+import 'package:groceryapp/models/orders.dart';
 
 
 void main() async {
@@ -77,6 +78,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         ChangeNotifierProvider.value(
           value: Cart(),
+        ),
+        ChangeNotifierProvider.value(
+        value: Orders(),
         ),
       ],
       child: MaterialApp(
