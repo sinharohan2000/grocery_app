@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:groceryapp/models/product-model.dart';
+import 'package:groceryapp/cart.dart';
+import'package:groceryapp/screens/cart_screen.dart';
 
 
 class ProductItems extends StatelessWidget {
@@ -9,6 +13,11 @@ class ProductItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pdt = Provider.of<ProductModel>(context);
+
+
+    final cart=Provider.of<Cart>(context);
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GridTile(
@@ -32,7 +41,9 @@ class ProductItems extends StatelessWidget {
                         ),
                         Expanded(
                           child: MaterialButton(
-                            onPressed: () {},
+                            onPressed: () {
+                          cart.addItem(pdt.id, pdt.productName, pdt.price);
+                            },
                             child: Icon(
                               Icons.add,
                             ),

@@ -38,5 +38,4 @@ class Products with ChangeNotifier {
     return [..._items];
   }
 
-
 }
