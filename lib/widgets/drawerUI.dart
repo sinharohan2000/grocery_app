@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceryapp/authentication.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:groceryapp/screens/home_screen.dart';
-import 'package:groceryapp/screens/login-page.dart';
-import 'package:groceryapp/screens/map-screen.dart';
+import 'package:groceryapp/export.dart';
 
 class DrawerUI extends StatefulWidget {
   @override
@@ -29,7 +23,6 @@ class _DrawerUIState extends State<DrawerUI> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getCurrentUser();
   }
@@ -49,7 +42,7 @@ class _DrawerUIState extends State<DrawerUI> {
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontFamily: 'SansitaSwashed',
-                      color: Colors.brown[500],
+                      color: Color.fromRGBO(43, 82, 121, 100),
                       fontSize: 30.0,
                       letterSpacing: 2.5,
                       fontWeight: FontWeight.bold,
@@ -130,6 +123,7 @@ class _DrawerUIState extends State<DrawerUI> {
             onTap: () {
               _auth.signOut();
               Navigator.pop(context);
+              Navigator.popAndPushNamed(context, LoginScreen.id);
             },
             leading: Icon(
               Icons.transit_enterexit,

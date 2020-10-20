@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceryapp/models/product-model5.dart';
-import 'package:groceryapp/widgets/drawerUI.dart';
-import 'package:groceryapp/widgets/pdt_item5.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/screens/home_screen.dart';
-
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:groceryapp/models/product-model5.dart';
+// import 'package:groceryapp/widgets/drawerUI.dart';
+// import 'package:groceryapp/widgets/pdt_item5.dart';
+// import 'package:provider/provider.dart';
+// import 'package:groceryapp/screens/home_screen.dart';
+import 'package:groceryapp/export.dart';
 
 class GrainsScreen extends StatefulWidget {
   static String id = "grains_screen";
@@ -61,10 +61,10 @@ class _GrainsScreenState extends State<GrainsScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     elevation: 2.0,
-                    child: ProductItems(
-                      name: grainsProducts[i].productName,
-                      imageUrl: grainsProducts[i].imgUrl,
-                    ),
+            child: ProductItems5(
+              name: grainsProducts[i].productName,
+              imageUrl: grainsProducts[i].imgUrl,
+            ),
                   ),
                 ),
           )),

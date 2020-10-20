@@ -1,24 +1,24 @@
 import 'package:flutter/foundation.dart';
 
-class ProductModel with ChangeNotifier {
+class ProductModel3 with ChangeNotifier {
   final String id;
   final String productName;
   final String category;
   final double price;
   final String imgUrl;
 
-  ProductModel(
+  ProductModel3(
       {@required this.id,
-        @required this.productName,
-        @required this.category,
-        @required this.price,
-        @required this.imgUrl});
+      @required this.productName,
+      @required this.category,
+      @required this.price,
+      @required this.imgUrl});
 }
 
 class Products3 with ChangeNotifier {
-  List<ProductModel> _items = [
+  List<ProductModel3> _items = [
 
-    ProductModel(
+    ProductModel3(
       id: '20',
       productName: 'Milk',
       imgUrl:
@@ -26,7 +26,7 @@ class Products3 with ChangeNotifier {
       price: 30.0,
       category: 'Dairy',
     ),
-    ProductModel(
+    ProductModel3(
       id: '21',
       productName: 'Cheese',
       imgUrl:
@@ -35,7 +35,8 @@ class Products3 with ChangeNotifier {
       category: 'Dairy',
     ),
   ];
-  List<ProductModel> get items {
+
+  List<ProductModel3> get items {
     return [..._items];
   }
 

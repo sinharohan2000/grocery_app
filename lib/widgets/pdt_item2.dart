@@ -1,20 +1,19 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/models/product-model2.dart';
-import 'package:groceryapp/cart.dart';
-import'package:groceryapp/screens/cart_screen.dart';
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import 'package:groceryapp/models/product-model2.dart';
+// import 'package:groceryapp/cart.dart';
+// import'package:groceryapp/screens/cart_screen.dart';
+import 'package:groceryapp/export.dart';
 
-
-class ProductItems extends StatelessWidget {
+class ProductItems2 extends StatelessWidget {
   final String name;
   final String imageUrl;
 
-  ProductItems({this.name, this.imageUrl});
+  ProductItems2({this.name, this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
     final pdt = Provider.of<ProductModel2>(context);
-
 
     final cart=Provider.of<Cart>(context);
 

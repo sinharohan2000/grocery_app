@@ -1,10 +1,11 @@
-import 'package:flutter/gestures.dart';
-import 'package:groceryapp/authentication.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:groceryapp/screens/registration-screen.dart';
-import 'package:groceryapp/screens/home_screen.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+// import 'package:flutter/gestures.dart';
+// import 'package:groceryapp/authentication.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:groceryapp/screens/registration-screen.dart';
+// import 'package:groceryapp/screens/home_screen.dart';
+// import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:groceryapp/export.dart';
 
 class LoginScreen extends StatefulWidget {
   static const id = 'login_screen';
@@ -14,8 +15,16 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String email,password;
-  bool showSpinner=false;
+  String email, password;
+  final _key = GlobalKey<FormState>();
+  bool showSpinner = false;
+
+  bool validateEmail(String value) {
+    Pattern pattern =
+        r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+    RegExp regex = new RegExp(pattern);
+    return (!regex.hasMatch(value)) ? false : true;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,46 +50,60 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.symmetric(vertical: 10.0,horizontal:25.0),
-                    child: Text(
-                      'Login',
-                      textAlign: TextAlign.right,
-                      style: TextStyle(
-                        fontFamily: 'SansitaSwashed',
-                        color: Colors.brown[500],
-                        fontSize: 30.0,
-                        letterSpacing: 2.5,
-                        fontWeight: FontWeight.bold,
+                    margin:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                    child: Hero(
+                      tag: 'name',
+                      child: Text(
+                        'Small Basket',
+                        textAlign: TextAlign.right,
+                        style: TextStyle(
+                          fontFamily: 'SansitaSwashed',
+                          color: Colors.brown[500],
+                          fontSize: 30.0,
+                          letterSpacing: 2.5,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   )
                 ],
               ),
               SizedBox(
-                height: 48.0,
+                height: 30.0,
               ),
-              TextField(
+              TextFormField(
+                key: _key,
+                autovalidate: true,
                 textAlign: TextAlign.center,
                 keyboardType: TextInputType.emailAddress,
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return null;
+                  }
+                  if (validateEmail(value) == false) {
+                    return "Invalid Email";
+                  }
+                },
                 onChanged: (value) {
                   //Do something with the user input.
-                  email=value;
+                  email = value;
                 },
                 decoration: InputDecoration(
                   hintText: 'Enter your email',
                   contentPadding:
-                  EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide:
-                    BorderSide(color: Colors.brown[700], width: 1.0),
+                        BorderSide(color: Colors.brown[700], width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide:
-                    BorderSide(color: Colors.brown[700], width: 2.0),
+                        BorderSide(color: Colors.brown[700], width: 2.0),
                     borderRadius: BorderRadius.all(Radius.circular(32.0)),
                   ),
                 ),

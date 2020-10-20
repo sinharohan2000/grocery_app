@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceryapp/models/product-model2.dart';
-import 'package:groceryapp/widgets/pdt_item2.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/screens/login-page.dart';
-import 'package:groceryapp/screens/home_screen.dart';
-import 'package:groceryapp/widgets/drawerUI.dart';
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:groceryapp/models/product-model2.dart';
+// import 'package:groceryapp/widgets/pdt_item2.dart';
+// import 'package:provider/provider.dart';
+// import 'package:groceryapp/screens/login-page.dart';
+// import 'package:groceryapp/screens/home_screen.dart';
+// import 'package:groceryapp/widgets/drawerUI.dart';
+import 'package:groceryapp/export.dart';
 
 class VegetablesScreen extends StatefulWidget {
   static String id = "vegetables_screen";
@@ -61,7 +62,7 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
               borderRadius: BorderRadius.circular(20),
             ),
             elevation: 2.0,
-            child: ProductItems(
+            child: ProductItems2(
               name: vegetableProducts[i].productName,
               imageUrl: vegetableProducts[i].imgUrl,
               //Todo: classify the categories and their products in their respective screens

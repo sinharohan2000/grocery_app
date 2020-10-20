@@ -58,6 +58,7 @@ flutter:
     - images/dairy.png
     - images/assets/drawer.jpg
     - images/assets/background.jpg
+    - images/assets/cartempty.png
   #   - images/a_dot_ham.jpeg
   # To add assets to your application, add an assets section, like this:
   # assets:

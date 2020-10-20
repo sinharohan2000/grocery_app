@@ -6,6 +6,22 @@ const kSendButtonTextStyle = TextStyle(
   fontSize: 18.0,
 );
 
+const kHomeScreenCardDecoration = BoxDecoration(
+  color: Colors.white,
+  boxShadow: <BoxShadow>[
+    BoxShadow(
+      color: Colors.black,
+      offset: Offset(1.0, 4.0),
+      blurRadius: 5.0,
+    ),
+  ],
+  borderRadius: BorderRadius.all(Radius.circular(20)),
+  image: DecorationImage(
+    image: AssetImage(''),
+    fit: BoxFit.cover,
+  ),
+);
+
 const kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   hintText: 'Type your message here...',

@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceryapp/models/product-model3.dart';
-import 'package:groceryapp/widgets/pdt_item3.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/screens/home_screen.dart';
-import 'package:groceryapp/screens/login-page.dart';
-import 'package:groceryapp/widgets/drawerUI.dart';
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:groceryapp/models/product-model3.dart';
+// import 'package:groceryapp/widgets/pdt_item3.dart';
+// import 'package:provider/provider.dart';
+// import 'package:groceryapp/screens/home_screen.dart';
+// import 'package:groceryapp/screens/login-page.dart';
+// import 'package:groceryapp/widgets/drawerUI.dart';
+import 'package:groceryapp/export.dart';
 
 class DairyScreen extends StatefulWidget {
   static String id = "dairy_screen";
@@ -60,11 +61,11 @@ class _DairyScreenState extends State<DairyScreen> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   elevation: 2.0,
-                  child: ProductItems(
-                    name: dairyProducts[i].productName,
-                    imageUrl: dairyProducts[i].imgUrl,
-                    //Todo: classify the categories and their products in their respective screens
-                  ),
+            child: ProductItems3(
+              name: dairyProducts[i].productName,
+              imageUrl: dairyProducts[i].imgUrl,
+              //Todo: classify the categories and their products in their respective screens
+            ),
                 ),
               ),
         )),

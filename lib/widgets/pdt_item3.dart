@@ -1,22 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/models/product-model3.dart';
-import 'package:groceryapp/cart.dart';
-import'package:groceryapp/screens/cart_screen.dart';
+// import 'package:flutter/material.dart';
+// import 'package:provider/provider.dart';
+// import 'package:groceryapp/models/product-model3.dart';
+// import 'package:groceryapp/cart.dart';
+// import'package:groceryapp/screens/cart_screen.dart';
+import 'package:groceryapp/export.dart';
 
-
-class ProductItems extends StatelessWidget {
+class ProductItems3 extends StatelessWidget {
   final String name;
   final String imageUrl;
 
-  ProductItems({this.name, this.imageUrl});
+  ProductItems3({this.name, this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
-    final pdt = Provider.of<ProductModel>(context);
+    final pdt = Provider.of<ProductModel3>(context);
 
-
-    final cart=Provider.of<Cart>(context);
+    final cart = Provider.of<Cart>(context);
 
     return Padding(
       padding: const EdgeInsets.all(8.0),

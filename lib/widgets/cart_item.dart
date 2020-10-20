@@ -16,7 +16,7 @@ class CartPdt extends StatelessWidget {
       key: ValueKey(id),
       direction: DismissDirection.endToStart,
       background: Container(
-        color: Colors.red,
+        color: Colors.deepOrange[900],
       ),
       onDismissed: (direction) {
         Provider.of<Cart>(context, listen: false).removeItem(productId);
@@ -24,10 +24,10 @@ class CartPdt extends StatelessWidget {
       child: Card(
         child: ListTile(
           leading: CircleAvatar(
-            child: FittedBox(child: Text('\$$price')),
+            child: FittedBox(child: Text('\₹$price')),
           ),
           title: Text(name),
-          subtitle: Text('Total: \$${(price * quantity)}'),
+          subtitle: Text('Total: \₹${(price * quantity)}'),
           trailing: Text('$quantity x'),
         ),
       ),

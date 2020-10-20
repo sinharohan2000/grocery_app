@@ -1,26 +1,4 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
-import 'package:groceryapp/models/product-model.dart';
-import 'package:groceryapp/screens/checkout-screen.dart';
-import 'package:groceryapp/screens/login-page.dart';
-import 'package:groceryapp/screens/map-screen.dart';
-import 'package:groceryapp/screens/registration-screen.dart';
-import 'package:groceryapp/screens/vegetables_screen.dart';
-import 'package:groceryapp/screens/dairy-screen.dart';
-import 'package:groceryapp/screens/mart-screen.dart';
-import 'package:groceryapp/screens/grains-screen.dart';
-import 'package:groceryapp/welcome.dart';
-import 'package:groceryapp/screens/home_screen.dart';
-import 'package:groceryapp/screens/fruits-screen.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/models/product-model2.dart';
-import 'package:groceryapp/models/product-model3.dart';
-import 'package:groceryapp/models/product-model4.dart';
-import 'package:groceryapp/models/product-model5.dart';
-import 'package:groceryapp/screens/cart_screen.dart';
-import 'package:groceryapp/cart.dart';
-import 'package:groceryapp/models/orders.dart';
-
+import 'package:groceryapp/export.dart';
 
 void main() async {
   runApp(GroceryApp());

@@ -1,19 +1,21 @@
-
-import 'package:groceryapp/screens/home_screen.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+//
+// import 'package:groceryapp/screens/home_screen.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:groceryapp/export.dart';
 
 class RegistrationScreen extends StatefulWidget {
-  static String id='registration_screen';
+  static String id = 'registration_screen';
 
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
 
-class _RegistrationScreenState extends State<RegistrationScreen> with TickerProviderStateMixin {
-  final _auth=FirebaseAuth.instance;
+class _RegistrationScreenState extends State<RegistrationScreen>
+    with TickerProviderStateMixin {
+  final _auth = FirebaseAuth.instance;
   String email,password;
   bool showSpinner=false;
 

@@ -1,19 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:groceryapp/authentication.dart';
-import 'package:groceryapp/cart.dart';
-import 'package:groceryapp/screens/cart_screen.dart';
-import 'package:groceryapp/screens/fruits-screen.dart';
-import 'package:groceryapp/screens/login-page.dart';
-import 'package:groceryapp/screens/map-screen.dart';
-import 'package:groceryapp/constants.dart';
-import 'package:groceryapp/screens/vegetables_screen.dart';
-import 'package:groceryapp/screens/dairy-screen.dart';
-import 'package:groceryapp/screens/mart-screen.dart';
-import 'package:groceryapp/screens/grains-screen.dart';
-import 'package:groceryapp/widgets/drawerUI.dart';
-
+import 'package:groceryapp/export.dart';
 
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
@@ -73,11 +58,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         //adding count and add to wish list
                       ],
                     ),
-                    // Image.asset(
-                    //   //post["image"],
-                    //   "images/assets/${post["image"]}",
-                    //   width: 10.0,
-                    // ),
                   ],
                 ),
               ),
@@ -118,33 +98,18 @@ class _HomeScreenState extends State<HomeScreen> {
         centerTitle: true,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.shopping_cart,size: 30,),
-            onPressed: (){
+            icon: Icon(
+              Icons.shopping_cart,
+              size: 30,
+            ),
+            onPressed: () {
               Navigator.pushNamed(context, CartScreen.id);
             },
           ),
         ],
       ),
       drawer: DrawerUI(),
-      body: Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage('images/assets/background.jpg'),
-          fit: BoxFit.cover,
-        )),
-        child: Column(
-          children: <Widget>[
-            Expanded(
-                child: ListView.builder(
-                    itemCount: itemsData.length,
-                    physics: BouncingScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return itemsData[index];
-                    })),
-          ],
-        ),
-      ),
-
+      body: HomeUI(),
     );
   }
 }

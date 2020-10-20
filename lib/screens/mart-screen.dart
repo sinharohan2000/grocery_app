@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceryapp/models/product-model4.dart';
-import 'package:groceryapp/widgets/pdt_item4.dart';
-import 'package:groceryapp/widgets/drawerUI.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/screens/home_screen.dart';
-import 'package:groceryapp/screens/login-page.dart';
+// import 'package:flutter/material.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:groceryapp/models/product-model4.dart';
+// import 'package:groceryapp/widgets/pdt_item4.dart';
+// import 'package:groceryapp/widgets/drawerUI.dart';
+// import 'package:provider/provider.dart';
+// import 'package:groceryapp/screens/home_screen.dart';
+// import 'package:groceryapp/screens/login-page.dart';
+import 'package:groceryapp/export.dart';
 
 class MartScreen extends StatefulWidget {
   static String id = "mart_screen";
@@ -61,10 +62,10 @@ class _MartScreenState extends State<MartScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     elevation: 2.0,
-                    child: ProductItems(
-                      name: martProducts[i].productName,
-                      imageUrl: martProducts[i].imgUrl,
-                    ),
+            child: ProductItems4(
+              name: martProducts[i].productName,
+              imageUrl: martProducts[i].imgUrl,
+            ),
                   ),
                 ),
           )),

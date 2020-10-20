@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:groceryapp/models/product-model.dart';
-import 'package:groceryapp/cart.dart';
-import'package:groceryapp/screens/cart_screen.dart';
-
+import 'package:groceryapp/export.dart';
 
 class ProductItems extends StatelessWidget {
   final String name;
