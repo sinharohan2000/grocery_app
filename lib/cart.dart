@@ -1,61 +1,82 @@
-// import 'package:flutter/material.dart';
-// import 'file:///E:/Flutter/grocery_app/lib/models/product-model.dart';
-//
-// // ignore: must_be_immutable
-// class Cart extends StatefulWidget {
-//   static String id = "cart-screen";
-//   List<ProductModel> cart = [ProductModel("Mango", 80)];
-//
-//   Cart(this.cart);
-//
-//   @override
-//   _CartState createState() => _CartState(this.cart);
-// }
-//
-// class _CartState extends State<Cart> {
-//   _CartState(cart);
-//
-//   List<ProductModel> cart;
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     if (cart != null)
-//       return Scaffold(
-//         appBar: AppBar(
-//           title: Text('Cart'),
-//         ),
-//         body: ListView.builder(
-//             itemCount: cart.length,
-//             itemBuilder: (context, index) {
-//               var item = cart[index];
-//               return Padding(
-//                 padding:
-//                     const EdgeInsets.symmetric(horizontal: 8.0, vertical: 2.0),
-//                 child: Card(
-//                   elevation: 4.0,
-//                   child: ListTile(
-//                     title: Text(item.productName),
-//                     trailing: GestureDetector(
-//                         child: Icon(
-//                           Icons.remove_circle,
-//                           color: Colors.red,
-//                         ),
-//                         onTap: () {
-//                           setState(() {
-//                             cart.remove(item);
-//                           });
-//                         }),
-//                   ),
-//                 ),
-//               );
-//             }),
-//       );
-//     else
-//       return Scaffold(
-//         appBar: AppBar(
-//           title: Text('Cart'),
-//         ),
-//         body: Text('CART IS EMPTY'),
-//       );
-//   }
-// }
+import 'package:flutter/foundation.dart';
+
+class CartItem {
+  final String id;
+  final String name;
+  final int quantity;
+  final double price;
+
+  CartItem(
+      {@required this.id,
+        @required this.name,
+        @required this.quantity,
+        @required this.price});
+}
+
+class Cart with ChangeNotifier {
+  Map<String, CartItem> _items = {};
+
+  Map<String, CartItem> get items {
+    return {..._items};
+  }
+
+  int get itemCount {
+    return _items.length;
+  }
+
+  void addItem(String pdtid, String name, double price) {
+    if (_items.containsKey(pdtid)) {
+      _items.update(
+          pdtid,
+              (existingCartItem) => CartItem(
+              id: DateTime.now().toString(),
+              name: existingCartItem.name,
+              quantity: existingCartItem.quantity + 1,
+              price: existingCartItem.price));
+    } else {
+      _items.putIfAbsent(
+          pdtid,
+              () => CartItem(
+            name: name,
+            id: DateTime.now().toString(),
+            quantity: 1,
+            price: price,
+          ));
+    }
+    notifyListeners();
+  }
+
+  void removeItem(String id) {
+    _items.remove(id);
+    notifyListeners();
+  }
+
+  void removeSingleItem(String id) {
+    if (!_items.containsKey(id)) {
+      return;
+    }
+    if (_items[id].quantity > 1) {
+      _items.update(
+          id,
+              (existingCartItem) => CartItem(
+              id: DateTime.now().toString(),
+              name: existingCartItem.name,
+              quantity: existingCartItem.quantity - 1,
+              price: existingCartItem.price));
+    }
+    notifyListeners();
+  }
+
+  double get totalAmount {
+    var total = 0.0;
+    _items.forEach((key, cartItem) {
+      total += cartItem.price * cartItem.quantity;
+    });
+    return total;
+  }
+
+  void clear() {
+    _items = {};
+    notifyListeners();
+  }
+}

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceryapp/authentication.dart';
 import 'package:groceryapp/cart.dart';
+import 'package:groceryapp/screens/cart_screen.dart';
 import 'package:groceryapp/screens/fruits-screen.dart';
 import 'package:groceryapp/screens/login-page.dart';
 import 'package:groceryapp/screens/map-screen.dart';
@@ -12,6 +13,7 @@ import 'package:groceryapp/screens/dairy-screen.dart';
 import 'package:groceryapp/screens/mart-screen.dart';
 import 'package:groceryapp/screens/grains-screen.dart';
 import 'package:groceryapp/widgets/drawerUI.dart';
+
 
 class HomeScreen extends StatefulWidget {
   static String id = "home_screen";
@@ -115,15 +117,12 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Small Basket'),
         centerTitle: true,
         actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 10),
-            child: GestureDetector(
-              onTap: () {},
-              child: Icon(
-                Icons.shopping_cart,
-              ),
-            ),
-          )
+          IconButton(
+            icon: Icon(Icons.shopping_cart,size: 30,),
+            onPressed: (){
+              Navigator.pushNamed(context, CartScreen.id);
+            },
+          ),
         ],
       ),
       drawer: DrawerUI(),

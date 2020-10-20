@@ -17,6 +17,8 @@ import 'package:groceryapp/models/product-model2.dart';
 import 'package:groceryapp/models/product-model3.dart';
 import 'package:groceryapp/models/product-model4.dart';
 import 'package:groceryapp/models/product-model5.dart';
+import 'package:groceryapp/screens/cart_screen.dart';
+import 'package:groceryapp/cart.dart';
 
 
 void main() async {
@@ -73,8 +75,12 @@ class _MyHomePageState extends State<MyHomePage> {
         ChangeNotifierProvider.value(
           value: Products5(),
         ),
+        ChangeNotifierProvider.value(
+          value: Cart(),
+        ),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData.light(),
         initialRoute: WelcomeScreen.id,
         routes: {
@@ -89,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
           MartScreen.id: (context) => MartScreen(),
           GrainsScreen.id: (context) => GrainsScreen(),
           CheckoutScreen.id: (context) => CheckoutScreen(),
+          CartScreen.id:(context)=>CartScreen(),
         },
       ),
     );
