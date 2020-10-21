@@ -1,6 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 // import 'package:flutter/material.dart';
 // import 'package:groceryapp/screens/login-page.dart';
+
 import 'export.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -13,25 +14,34 @@ class WelcomeScreen extends StatefulWidget {
 class _WelcomeScreenState extends State<WelcomeScreen>
     with TickerProviderStateMixin {
   AnimationController controller;
+  Animation animation;
 
   @override
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 3),
       vsync: this,
     );
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
+        .animate(controller);
     controller.forward();
     controller.addListener(() {
       setState(() {
       });
-      print(controller.value);
     });
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: animation.value,
       body:SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -48,15 +58,21 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   ),
                   Hero(
                     tag: 'name',
-                    child: Text(
-                      'Small Basket',
-                      style: TextStyle(
+                    child: ColorizeAnimatedTextKit(
+                      text:['Small Basket'],
+                      textStyle: TextStyle(
                         fontFamily: 'SansitaSwashed',
                         color: Colors.brown[500],
                         fontSize: 30.0,
                         letterSpacing: 2.5,
                         fontWeight: FontWeight.bold,
                       ),
+                      colors: [
+                        Colors.brown,
+                        Colors.blue,
+                        Colors.yellow,
+                        Colors.red,
+                      ],
                     ),
                   ),
                 ],

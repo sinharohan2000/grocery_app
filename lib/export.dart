@@ -7,6 +7,7 @@ export 'package:provider/provider.dart';
 export 'package:flutter/gestures.dart';
 export 'package:modal_progress_hud/modal_progress_hud.dart';
 export 'package:google_maps_flutter/google_maps_flutter.dart';
+export 'package:animated_text_kit/animated_text_kit.dart';
 
 //Screens
 export 'package:groceryapp/screens/checkout-screen.dart';
