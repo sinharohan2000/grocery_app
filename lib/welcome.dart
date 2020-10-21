@@ -1,7 +1,4 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:groceryapp/screens/login-page.dart';
-
+import 'package:flutter/cupertino.dart';
 import 'export.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -12,7 +9,7 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen>
-    with TickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   AnimationController controller;
   Animation animation;
 
@@ -27,8 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         .animate(controller);
     controller.forward();
     controller.addListener(() {
-      setState(() {
-      });
+      setState(() {});
     });
   }
 
@@ -42,7 +38,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: animation.value,
-      body:SafeArea(
+      body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -59,7 +55,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   Hero(
                     tag: 'name',
                     child: ColorizeAnimatedTextKit(
-                      text:['Small Basket'],
+                      text: ['Small Basket'],
                       textStyle: TextStyle(
                         fontFamily: 'SansitaSwashed',
                         color: Colors.brown[500],
@@ -83,22 +79,19 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                 color: Colors.brown[200],
                 borderRadius: BorderRadius.circular(10.0),
               ),
-              margin: EdgeInsets.symmetric(vertical: 10.0,horizontal:
-              25.0),
-
+              margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
               child: FlatButton(
-                  onPressed: (){
+                  onPressed: () {
                     Navigator.pushNamed(context, LoginScreen.id);
                   },
                   child: Text(
                     'Divein',
                     style: TextStyle(
-                      color:Colors.black,
+                      color: Colors.black,
                       fontSize: 25.0,
                       letterSpacing: 2.5,
                     ),
-                  )
-              ),
+                  )),
             ),
           ],
         ),
