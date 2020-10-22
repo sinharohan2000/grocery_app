@@ -11,6 +11,7 @@ class GroceryApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Grocery App',
       theme: ThemeData(
         backgroundColor: Color(0xfff4e3),

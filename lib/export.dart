@@ -8,6 +8,7 @@ export 'package:flutter/gestures.dart';
 export 'package:modal_progress_hud/modal_progress_hud.dart';
 export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:animated_text_kit/animated_text_kit.dart';
+export 'package:geolocator/geolocator.dart';
 
 //Screens
 export 'package:groceryapp/screens/checkout-screen.dart';
@@ -45,3 +46,4 @@ export 'package:groceryapp/welcome.dart';
 export 'package:groceryapp/cart.dart';
 export 'package:groceryapp/authentication.dart';
 export 'package:groceryapp/constants.dart';
+export 'package:groceryapp/location.dart';

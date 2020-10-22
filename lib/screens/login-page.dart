@@ -84,6 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   if (validateEmail(value) == false) {
                     return "Invalid Email";
                   }
+                  return null;
                 },
                 onChanged: (value) {
                   //Do something with the user input.
