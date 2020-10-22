@@ -12,7 +12,8 @@ const kHomeScreenCardDecoration = BoxDecoration(
     BoxShadow(
       color: Colors.black,
       offset: Offset(1.0, 4.0),
-      blurRadius: 5.0,
+      blurRadius: 10.0,
+      spreadRadius: 5.0,
     ),
   ],
   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -34,13 +35,9 @@ const kMessageContainerDecoration = BoxDecoration(
   ),
 );
 
-const grocery_data= [
-  {
-    "name":"Fruits",
-    "image":"fruits.png"
-
-  },{
-    "name":"Vegetables", "image": "vegetables.png"},
+const grocery_data = [
+  {"name": "Fruits", "image": "fruits.png"},
+  {"name": "Vegetables", "image": "vegetables.png"},
   {"name": "Dairy Products", "image": "dairy.png"},
   {"name": "Mart Products", "image": "supermart.png"},
   {"name": "Grains and Pulses", "image": "ricewheat.png"},
