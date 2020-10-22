@@ -28,12 +28,16 @@ class _HomeUIState extends State<HomeUI> {
                   ),
               padding: EdgeInsets.only(top: 20, left: 25),
               margin: EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
-              child: Text(
-                'Fruits',
-                style: TextStyle(
-                  //todo: Add font family
-                  letterSpacing: 1.0,
-                  fontSize: 25.0,
+              child: Center(
+                child: Text(
+                  'Fruits',
+                  style: TextStyle(
+                    //todo: Add font family
+                    fontFamily: 'Lobster',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.0,
+                    fontSize: 35.0,
+                  ),
                 ),
               ),
               height: 200.0,
@@ -51,12 +55,16 @@ class _HomeUIState extends State<HomeUI> {
                   ),
               padding: EdgeInsets.only(top: 20, left: 25),
               margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-              child: Text(
-                'Vegetables',
-                style: TextStyle(
-                  //todo: Add font family
-                  letterSpacing: 1.0,
-                  fontSize: 25.0,
+              child: Center(
+                child: Text(
+                  'Vegetables',
+                  style: TextStyle(
+                    //todo: Add font family
+                    fontFamily: 'Lobster',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.0,
+                    fontSize: 35.0,
+                  ),
                 ),
               ),
               height: 200.0,
@@ -74,12 +82,16 @@ class _HomeUIState extends State<HomeUI> {
                   ),
               padding: EdgeInsets.only(top: 20, left: 25),
               margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-              child: Text(
-                'Dairy Products',
-                style: TextStyle(
-                  //todo: Add font family
-                  letterSpacing: 1.0,
-                  fontSize: 25.0,
+              child: Center(
+                child: Text(
+                  'Dairy Products',
+                  style: TextStyle(
+                    //todo: Add font family
+                    fontFamily: 'Lobster',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.0,
+                    fontSize: 35.0,
+                  ),
                 ),
               ),
               height: 200.0,
@@ -97,12 +109,16 @@ class _HomeUIState extends State<HomeUI> {
                   ),
               padding: EdgeInsets.only(top: 20, left: 25),
               margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-              child: Text(
-                'Mart Products',
-                style: TextStyle(
-                  //todo: Add font family
-                  letterSpacing: 1.0,
-                  fontSize: 25.0,
+              child: Center(
+                child: Text(
+                  'Mart Products',
+                  style: TextStyle(
+                    //todo: Add font family
+                    fontFamily: 'Lobster',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.0,
+                    fontSize: 35.0,
+                  ),
                 ),
               ),
               height: 200.0,
@@ -120,12 +136,16 @@ class _HomeUIState extends State<HomeUI> {
                   ),
               padding: EdgeInsets.only(top: 20, left: 25),
               margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
-              child: Text(
-                'Grains & Pulses',
-                style: TextStyle(
-                  //todo: Add font family
-                  letterSpacing: 1.0,
-                  fontSize: 25.0,
+              child: Center(
+                child: Text(
+                  'Grains & Pulses',
+                  style: TextStyle(
+                    //todo: Add font family
+                    fontFamily: 'Lobster',
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 1.0,
+                    fontSize: 35.0,
+                  ),
                 ),
               ),
               height: 200.0,
