@@ -105,7 +105,7 @@ class _DrawerUIState extends State<DrawerUI> {
           ),
           ListTile(
             onTap: () {
-              //Navigator.pushNamed(context, );
+              Navigator.pushNamed(context, CartScreen.id);
             },
             leading: Icon(
               Icons.shopping_cart,

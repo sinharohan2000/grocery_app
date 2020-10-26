@@ -76,11 +76,12 @@ class _MapsScreenState extends State<MapsScreen> {
                         onMapCreated: (controller) {
                           setState(() {
                             _mapController = controller;
+                            getLocation();
                           });
                         },
                         initialCameraPosition: CameraPosition(
-                          target: LatLng(27.7025956, 85.2882331),
-                          zoom: 15.0,
+                          target: LatLng(26.7026143, 85.288129),
+                          zoom: 5.0,
                         ),
                         compassEnabled: true,
                         myLocationButtonEnabled: true,
@@ -91,20 +92,13 @@ class _MapsScreenState extends State<MapsScreen> {
                               CameraUpdate.newLatLng(coordinate));
                         },
                       )
-                    : CircularProgressIndicator(),
+                    : Center(child: CircularProgressIndicator()),
               )
             ],
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _mapController.animateCamera(CameraUpdate.zoomIn());
-        },
-        child: Icon(
-          Icons.zoom_in,
-        ),
-      ),
+
     );
   }
 }
