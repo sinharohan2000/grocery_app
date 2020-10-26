@@ -41,7 +41,7 @@ class _GrainsScreenState extends State<GrainsScreen> {
         leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
             onPressed: () {
-              Navigator.pushNamed(context, HomeScreen.id);
+              Navigator.pop(context);
             }),
         title: Text('Grains & Pulses'),
         centerTitle: true,

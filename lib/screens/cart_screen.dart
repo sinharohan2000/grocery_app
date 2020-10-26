@@ -18,6 +18,15 @@ class CartScreen extends StatelessWidget {
         title: Text(
           'My Cart',
         ),
+        leading: MaterialButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
       ),
       body: Container(

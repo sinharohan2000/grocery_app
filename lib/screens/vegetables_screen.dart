@@ -1,11 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:groceryapp/models/product-model2.dart';
-// import 'package:groceryapp/widgets/pdt_item2.dart';
-// import 'package:provider/provider.dart';
-// import 'package:groceryapp/screens/login-page.dart';
-// import 'package:groceryapp/screens/home_screen.dart';
-// import 'package:groceryapp/widgets/drawerUI.dart';
 import 'package:groceryapp/export.dart';
 
 class VegetablesScreen extends StatefulWidget {
@@ -42,7 +34,7 @@ class _VegetablesScreenState extends State<VegetablesScreen> {
         leading: IconButton(
             icon: Icon(Icons.arrow_back_ios),
             onPressed: () {
-              Navigator.pushNamed(context, HomeScreen.id);
+              Navigator.pop(context);
             }),
         title: Text('Vegetables'),
         centerTitle: true,

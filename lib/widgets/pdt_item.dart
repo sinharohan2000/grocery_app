@@ -20,7 +20,21 @@ class ProductItems extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
-                child: Image.network(imageUrl),
+                child: Image.network(
+                  imageUrl,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                                loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             Card(

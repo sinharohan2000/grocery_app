@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'export.dart';
-import 'export.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 class WelcomeScreen extends StatefulWidget {
