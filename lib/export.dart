@@ -1,6 +1,7 @@
 //packages
 export 'package:firebase_core/firebase_core.dart';
 export 'package:firebase_auth/firebase_auth.dart';
+export 'package:cloud_firestore/cloud_firestore.dart';
 export 'package:google_sign_in/google_sign_in.dart';
 export 'package:flutter/material.dart';
 export 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ export 'package:groceryapp/screens/cart_screen.dart';
 export 'package:groceryapp/screens/home_screen.dart';
 export 'package:groceryapp/screens/fruits-screen.dart';
 export 'package:groceryapp/screens/profile_screen.dart';
+export 'package:groceryapp/screens/profile.dart';
 
 //models
 export 'package:groceryapp/models/product-model.dart';
@@ -33,6 +35,7 @@ export 'package:groceryapp/models/product-model3.dart';
 export 'package:groceryapp/models/product-model4.dart';
 export 'package:groceryapp/models/product-model5.dart';
 export 'package:groceryapp/models/orders.dart';
+export 'package:groceryapp/models/user_setup.dart';
 
 //widgets
 export 'package:groceryapp/widgets/cart_item.dart';

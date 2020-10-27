@@ -34,15 +34,16 @@ class _DrawerUIState extends State<DrawerUI> {
         children: <Widget>[
           DrawerHeader(
             child: Padding(
-              padding: const EdgeInsets.only(top: 100.0),
+              padding: EdgeInsets.only(top: 60, bottom: 30),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     'Options',
                     textAlign: TextAlign.left,
                     style: TextStyle(
                       fontFamily: 'SansitaSwashed',
-                      color: Color.fromRGBO(43, 82, 121, 100),
+                      color: Color.fromRGBO(43, 82, 121, 1),
                       fontSize: 30.0,
                       letterSpacing: 2.5,
                       fontWeight: FontWeight.bold,
@@ -59,7 +60,7 @@ class _DrawerUIState extends State<DrawerUI> {
           ),
           ListTile(
             onTap: () {
-              Navigator.pushNamed(context, ProfileScreen.id);
+              Navigator.pushNamed(context, profileGetPage.id);
             },
             leading: Icon(
               Icons.person,
