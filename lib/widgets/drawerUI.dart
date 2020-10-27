@@ -58,7 +58,9 @@ class _DrawerUIState extends State<DrawerUI> {
             )),
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ProfileScreen.id);
+            },
             leading: Icon(
               Icons.person,
               size: 25,

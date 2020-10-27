@@ -9,6 +9,8 @@ export 'package:modal_progress_hud/modal_progress_hud.dart';
 export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:animated_text_kit/animated_text_kit.dart';
 export 'package:geolocator/geolocator.dart';
+export 'package:image_picker/image_picker.dart';
+export 'dart:io';
 
 //Screens
 export 'package:groceryapp/screens/checkout-screen.dart';
@@ -22,6 +24,7 @@ export 'package:groceryapp/screens/grains-screen.dart';
 export 'package:groceryapp/screens/cart_screen.dart';
 export 'package:groceryapp/screens/home_screen.dart';
 export 'package:groceryapp/screens/fruits-screen.dart';
+export 'package:groceryapp/screens/profile_screen.dart';
 
 //models
 export 'package:groceryapp/models/product-model.dart';

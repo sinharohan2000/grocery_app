@@ -1,4 +1,5 @@
 import 'package:groceryapp/export.dart';
+import 'package:groceryapp/screens/profile_screen.dart';
 
 void main() async {
   runApp(GroceryApp());
@@ -79,6 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
           GrainsScreen.id: (context) => GrainsScreen(),
           CheckoutScreen.id: (context) => CheckoutScreen(),
           CartScreen.id:(context)=>CartScreen(),
+          ProfileScreen.id:(context)=>ProfileScreen(),
         },
       ),
     );
