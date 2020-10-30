@@ -83,16 +83,18 @@ class _CheckoutButtonState extends State<CheckoutButton> {
               color: Colors.white,
             ),
           ),
-          onLongPress: () {
-            widget.cart.clear();
-          },
+          // onLongPress: () {
+          //   widget.cart.clear();
+          // },
+
           onPressed: widget.cart.totalAmount <= 0
               ? null
               : () async {
             await Provider.of<Orders>(context, listen: false).addOrder(
                 widget.cart.items.values.toList(),
                 widget.cart.totalAmount);
-            widget.cart.clear();
+             Navigator.pushNamed(context, CheckoutScreen.id);
+            // widget.cart.clear();
           },
         ),
       ),

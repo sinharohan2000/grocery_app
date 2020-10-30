@@ -9,7 +9,7 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
-  String name, dob, email, about, profession;
+  String name, dob, email, profession,address;
   PickedFile _imageFile;
   final ImagePicker _picker = ImagePicker();
   final _auth = FirebaseAuth.instance;
@@ -47,19 +47,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
           SizedBox(
             height: 20,
           ),
-          usernameTextField(),
-          SizedBox(
-            height: 20,
-          ),
           dobField(),
           SizedBox(
             height: 20,
           ),
+            emailTextField(),
+            SizedBox(
+              height: 20,
+            ),
           professionTextField(),
           SizedBox(
             height: 20,
           ),
-          aboutTextField(),
+          addressTextField(),
           SizedBox(
             height: 20,
           ),
@@ -68,28 +68,28 @@ class _ProfileScreenState extends State<ProfileScreen> {
               User updateUser = FirebaseAuth.instance.currentUser;
               updateUser.updateProfile(displayName: name);
               updateUser.updateEmail(email);
-              userSetup(name, about, dob, email, profession);
+              userSetup(name, dob, email, profession, address);
               Navigator.pop(context);
             },
             child: Center(
                 child: Container(
-              width: 200,
-              height: 50,
-              decoration: BoxDecoration(
-                color: Colors.teal,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(
-                child: Text(
-                  "Create Profile",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                  width: 200,
+                  height: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                ),
-              ),
-            )),
+                  child: Center(
+                    child: Text(
+                      "Create Profile",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                )),
           ),
         ],
       ),
@@ -138,7 +138,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget bottomSheet() {
     return Container(
       height: 100.0,
-      width: MediaQuery.of(context).size.width,
+      width: MediaQuery
+          .of(context)
+          .size
+          .width,
       margin: EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 20,
@@ -211,7 +214,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
-  Widget usernameTextField() {
+  Widget emailTextField() {
     return TextFormField(
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
@@ -265,6 +268,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 
+  Widget addressTextField() {
+    return TextFormField(
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.teal,
+            )),
+        focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.orange,
+              width: 2,
+            )),
+        prefixIcon: Icon(
+          Icons.person,
+          color: Colors.green,
+        ),
+        labelText: "Address",
+        helperText: "Address can't be empty",
+        hintText: "e.g.4636  Lake Forest Drive,New York",
+      ),
+      onChanged: (value) {
+        address = value;
+      },
+    );
+  }
+
   Widget dobField() {
     return TextFormField(
       decoration: InputDecoration(
@@ -290,50 +319,5 @@ class _ProfileScreenState extends State<ProfileScreen> {
       },
     );
   }
-
-  Widget titleTextField() {
-    return TextFormField(
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.teal,
-            )),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.orange,
-              width: 2,
-            )),
-        prefixIcon: Icon(
-          Icons.person,
-          color: Colors.green,
-        ),
-        labelText: "Title",
-        helperText: "It can't be empty",
-        hintText: "Flutter Developer",
-      ),
-    );
   }
 
-  Widget aboutTextField() {
-    return TextFormField(
-      maxLines: 4,
-      decoration: InputDecoration(
-        border: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.teal,
-            )),
-        focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.orange,
-              width: 2,
-            )),
-        labelText: "About",
-        helperText: "Write about yourself",
-        hintText: "I am Flutter App Developer",
-      ),
-      onChanged: (value) {
-        about = value;
-      },
-    );
-  }
-}
