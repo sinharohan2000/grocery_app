@@ -1,8 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import 'package:groceryapp/models/product-model5.dart';
-// import 'package:groceryapp/cart.dart';
-// import'package:groceryapp/screens/cart_screen.dart';
 import 'package:groceryapp/export.dart';
 
 class ProductItems5 extends StatelessWidget {
@@ -24,7 +19,19 @@ class ProductItems5 extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
-                child: Image.network(imageUrl),
+                child: Image.network(imageUrl,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },),
               ),
             ),
             Card(

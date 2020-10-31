@@ -19,21 +19,52 @@ class Products4 with ChangeNotifier {
   List<ProductModel4> _items = [
     ProductModel4(
       id: '30',
-      productName: 'Chips',
+      productName: 'Lays American',
       imgUrl:
-      'https://i1.wp.com/www.eatthis.com/wp-content/uploads/2018/09/bowl-potato-chips.jpg?fit=1024%2C750&ssl=1',
-      price: 10.0,
+      'https://blueberrymartnepal.com/863-home_default/lays-american-style-cream-onion-42gm.jpg',
+      price: 20.0,
       category: 'Mart',
     ),
     ProductModel4(
       id: '31',
-      productName: 'Mango Pickle',
+      productName: 'Pickle Powder',
       imgUrl:
-      'https://www.thespruceeats.com/thmb/R_U8CobBKSa8axd3WfzOhJmF-DA=/3437x2578/smart/filters:no_upscale()/group-photograph-of-indian-pickles-like-mango-pickle---lemon-pickle-and-green-chilli-pickle--sarved-in-white-ceramic-bowl--selective-focus-666981148-5b0f5ae30e23d9003605af19.jpg',
-      price: 100.0,
+      'https://5.imimg.com/data5/LD/XT/MY-14442040/pickle-powder-500x500.jpg',
+      price: 47.0,
       category: 'Mart',
     ),
-
+    ProductModel4(
+      id: '32',
+      productName: 'Priya Detergent',
+      imgUrl:
+      'https://5.imimg.com/data5/HA/CL/MY-3854394/priya-detergent-powder-500x500.jpg',
+      price: 47.0,
+      category: 'Mart',
+    ),
+    ProductModel4(
+      id: '33',
+      productName: 'Medimix Soap',
+      imgUrl:
+      'https://images-na.ssl-images-amazon.com/images/I/51CacmpYVzL.jpg',
+      price: 36.0,
+      category: 'Mart',
+    ),
+    ProductModel4(
+      id: '34',
+      productName: 'Nycil Powder',
+      imgUrl:
+      'https://d2s8edsvfzlfgk.cloudfront.net/images/detailed/16/image_7_0laj-cd.jpg?t=1592648723',
+      price: 107.0,
+      category: 'Mart',
+    ),
+    ProductModel4(
+      id: '35',
+      productName: 'Kurkure',
+      imgUrl:
+      'https://images-na.ssl-images-amazon.com/images/I/91XtChXpXEL._SL1500_.jpg',
+      price: 107.0,
+      category: 'Mart',
+    ),
   ];
 
   List<ProductModel4> get items {

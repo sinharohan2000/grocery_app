@@ -1,9 +1,3 @@
-// import 'package:flutter/material.dart';
-//
-// import 'package:provider/provider.dart';
-// import 'package:groceryapp/models/orders.dart';
-// import 'package:groceryapp/cart.dart';
-// import 'package:groceryapp/widgets/cart_item.dart';
 import 'package:groceryapp/export.dart';
 
 class CartScreen extends StatelessWidget {
@@ -68,6 +62,71 @@ class CheckoutButton extends StatefulWidget {
 }
 
 class _CheckoutButtonState extends State<CheckoutButton> {
+  bool flag = false;
+
+  Future<void> _showAlertDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Confirm'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('Are you sure you want to'),
+                Text('order the selected items?'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            MaterialButton(
+              child: Text('Yes'),
+              onPressed: () {
+                flag = true;
+                Navigator.pop(context);
+              },
+            ),
+            MaterialButton(
+              child: Text('No'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Future<void> _showFinalAlertDialog() async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Order confirmed'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('Your order has been placed'),
+                Text('Thank you for using Small Basket!'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            MaterialButton(
+              child: Text('Ok'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -83,18 +142,20 @@ class _CheckoutButtonState extends State<CheckoutButton> {
               color: Colors.white,
             ),
           ),
-          // onLongPress: () {
-          //   widget.cart.clear();
-          // },
-
           onPressed: widget.cart.totalAmount <= 0
               ? null
               : () async {
-            await Provider.of<Orders>(context, listen: false).addOrder(
-                widget.cart.items.values.toList(),
-                widget.cart.totalAmount);
-             Navigator.pushNamed(context, CheckoutScreen.id);
-            // widget.cart.clear();
+            await _showAlertDialog();
+            if (flag == true) {
+              await Provider.of<Orders>(context, listen: false).addOrder(
+                  widget.cart.items.values.toList(),
+                  widget.cart.totalAmount);
+              widget.cart.clear();
+              await _showFinalAlertDialog();
+              Navigator.pop(context);
+            } else {
+              Navigator.pop(context);
+            }
           },
         ),
       ),

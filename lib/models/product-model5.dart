@@ -19,20 +19,44 @@ class Products5 with ChangeNotifier {
   List<ProductModel5> _items = [
     ProductModel5(
       id: '40',
-      productName: 'Basmati 5Kg',
+      productName: 'Patanjali Aata',
       imgUrl:
-      'https://post.greatist.com/wp-content/uploads/sites/3/2020/02/322775_2200-732x549.jpg',
-      price: 250.0,
+      'https://images-na.ssl-images-amazon.com/images/I/91oIQlysS4L._SL1500_.jpg',
+      price: 183.0,
       category: 'Grains',
     ),
     ProductModel5(
       id: '41',
       productName: 'Moong Daal',
       imgUrl:
-      'https://images-na.ssl-images-amazon.com/images/I/91X3uTBjNHL._SX679_.jpg',
-      price: 55.0,
+      'https://www.gramiyum.in/wp-content/uploads/2019/09/moong-dal-green-split.jpg',
+      price: 90.0,
       category: 'Grains',
-    )
+    ),
+    ProductModel5(
+      id: '42',
+      productName: 'Toor Daal',
+      imgUrl:
+      'https://aapkagrocery.com/wp-content/uploads/2020/06/toor-dal.png',
+      price: 48.0,
+      category: 'Grains',
+    ),
+    ProductModel5(
+      id: '43',
+      productName: 'Tata Salt',
+      imgUrl:
+      'https://images-na.ssl-images-amazon.com/images/I/61VASI018mL._SL1400_.jpg',
+      price: 48.0,
+      category: 'Grains',
+    ),
+    ProductModel5(
+      id: '43',
+      productName: 'Patanjali Rice',
+      imgUrl:
+      'https://images-na.ssl-images-amazon.com/images/I/91ZHw62YpYL._SL1500_.jpg',
+      price: 390.0,
+      category: 'Grains',
+    ),
   ];
 
   List<ProductModel5> get items {

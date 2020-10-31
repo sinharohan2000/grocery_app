@@ -4,10 +4,11 @@ import 'package:groceryapp/export.dart';
 
 Future<void> userSetup(String displayName,String dob,
     String email, String profession,String address) async {
-  CollectionReference users = FirebaseFirestore.instance.collection('Users');
+  DocumentReference users = FirebaseFirestore.instance.collection('Users').doc(
+      FirebaseAuth.instance.currentUser.uid);
   FirebaseAuth auth = FirebaseAuth.instance;
   String uid = auth.currentUser.uid.toString();
-  users.add({
+  users.collection('addresses').add({
     'displayName': displayName,
     'uid': uid,
     'email': email,
@@ -17,3 +18,5 @@ Future<void> userSetup(String displayName,String dob,
   });
   return;
 }
+
+

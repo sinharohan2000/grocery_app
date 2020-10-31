@@ -124,9 +124,9 @@ class _DrawerUIState extends State<DrawerUI> {
           ),
           ListTile(
             onTap: () async {
-             await _auth.signOut();
-              Navigator.pop(context);
-              Navigator.popAndPushNamed(context, LoginScreen.id);
+             signOutUser();
+             Navigator.pop(context);
+             Navigator.popAndPushNamed(context, LoginScreen.id);
             },
             leading: Icon(
               Icons.transit_enterexit,

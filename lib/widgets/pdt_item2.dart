@@ -1,8 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-// import 'package:groceryapp/models/product-model2.dart';
-// import 'package:groceryapp/cart.dart';
-// import'package:groceryapp/screens/cart_screen.dart';
 import 'package:groceryapp/export.dart';
 
 class ProductItems2 extends StatelessWidget {
@@ -15,7 +10,7 @@ class ProductItems2 extends StatelessWidget {
   Widget build(BuildContext context) {
     final pdt = Provider.of<ProductModel2>(context);
 
-    final cart=Provider.of<Cart>(context);
+    final cart = Provider.of<Cart>(context);
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -24,7 +19,21 @@ class ProductItems2 extends StatelessWidget {
           children: <Widget>[
             Expanded(
               child: Container(
-                child: Image.network(imageUrl),
+                child: Image.network(
+                  imageUrl,
+                  loadingBuilder: (BuildContext context, Widget child,
+                      ImageChunkEvent loadingProgress) {
+                    if (loadingProgress == null) return child;
+                    return Center(
+                      child: CircularProgressIndicator(
+                        value: loadingProgress.expectedTotalBytes != null
+                            ? loadingProgress.cumulativeBytesLoaded /
+                            loadingProgress.expectedTotalBytes
+                            : null,
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
             Card(

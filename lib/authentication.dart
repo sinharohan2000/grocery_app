@@ -3,6 +3,7 @@ import 'export.dart';
 FirebaseAuth _auth = FirebaseAuth.instance;
 final googleSignInVar = GoogleSignIn();
 
+//Google SignIn
 Future<bool> googleSignIn() async {
   GoogleSignInAccount googleSignInAccount = await googleSignInVar.signIn();
   if (googleSignInAccount != null) {
@@ -20,6 +21,7 @@ Future<bool> googleSignIn() async {
   return null;
 }
 
+//SignIn with email and password
 Future<bool> signin(String email, String password) async {
   try {
     UserCredential result = await _auth.signInWithEmailAndPassword(
@@ -32,11 +34,13 @@ Future<bool> signin(String email, String password) async {
   return null;
 }
 
+//SignUp with email and password
 Future<bool> signup(String email, String password) async {
   try {
     UserCredential result = await _auth.createUserWithEmailAndPassword(
-        email: email, password: password);
-    //User user = result.user;
+        email: email,
+        password: password
+    );
     return Future.value(true);
   } catch (e) {
     print(e);
@@ -44,6 +48,7 @@ Future<bool> signup(String email, String password) async {
   return null;
 }
 
+//SignOut the user
 Future<bool> signOutUser() async {
   User user = _auth.currentUser;
   if (user.providerData[1].providerId == 'google.com') {
@@ -53,4 +58,9 @@ Future<bool> signOutUser() async {
 
   await _auth.signOut();
   return Future.value(true);
+}
+
+//Get UID
+Future<String> getCurrentUID() async {
+  String uid = (await _auth.currentUser).uid;
 }
