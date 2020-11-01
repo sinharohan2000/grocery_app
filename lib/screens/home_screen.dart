@@ -36,12 +36,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.brown[50],
       appBar: AppBar(
-        backgroundColor: Colors.brown[600],
+        backgroundColor: Color.fromRGBO(70, 51, 51, 1),
         title: Text(
-            'Small Basket',
+          'Small Basket',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: 30.0,
+            fontSize: 25.0,
             fontFamily: 'SansitaSwashed',
             letterSpacing: 2.0,
           ),

@@ -19,7 +19,6 @@ class FruitScreen extends StatefulWidget {
 }
 
 class _FruitScreenState extends State<FruitScreen> {
-  int _indexCurrent = 0;
   final _auth = FirebaseAuth.instance;
   User loggedInUser;
 

@@ -71,6 +71,9 @@ class _CheckoutButtonState extends State<CheckoutButton> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Confirm'),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[
@@ -106,6 +109,9 @@ class _CheckoutButtonState extends State<CheckoutButton> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('Order confirmed'),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
           content: SingleChildScrollView(
             child: ListBody(
               children: <Widget>[

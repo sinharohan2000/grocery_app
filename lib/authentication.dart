@@ -26,7 +26,7 @@ Future<bool> signin(String email, String password) async {
   try {
     UserCredential result = await _auth.signInWithEmailAndPassword(
         email: email, password: password);
-    User user = result.user;
+
     return Future.value(true);
   } catch (e) {
     print(e);
@@ -60,7 +60,3 @@ Future<bool> signOutUser() async {
   return Future.value(true);
 }
 
-//Get UID
-Future<String> getCurrentUID() async {
-  String uid = (await _auth.currentUser).uid;
-}

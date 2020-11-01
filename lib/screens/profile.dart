@@ -71,7 +71,7 @@ class _profileGetPageState extends State<profileGetPage> {
               children: <Widget>[
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.lightGreen[800],
+                    color: Color.fromRGBO(70, 51, 51, 1),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30)),
@@ -110,7 +110,7 @@ class _profileGetPageState extends State<profileGetPage> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.lightGreen[100],
+                    color: Color.fromRGBO(235, 212, 212, 1),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
@@ -125,14 +125,14 @@ class _profileGetPageState extends State<profileGetPage> {
                           fontFamily: 'Lobster',
                           letterSpacing: 1,
                           fontSize: 25,
-                          color: Colors.lightGreen[800]),
+                          color: Color.fromRGBO(70, 51, 51, 1)),
                     ),
                   ),
                   width: double.infinity,
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.lightGreen[700],
+                    color: Color.fromRGBO(70, 51, 51, 1),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30)),
@@ -157,7 +157,7 @@ class _profileGetPageState extends State<profileGetPage> {
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.lightGreen[100],
+                    color: Color.fromRGBO(235, 212, 212, 1),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
@@ -172,14 +172,14 @@ class _profileGetPageState extends State<profileGetPage> {
                           fontFamily: 'Lobster',
                           letterSpacing: 1,
                           fontSize: 25,
-                          color: Colors.lightGreen[800]),
+                          color: Color.fromRGBO(70, 51, 51, 1)),
                     ),
                   ),
                   width: double.infinity,
                 ),
                 Container(
                   decoration: BoxDecoration(
-                    color: Colors.lightGreen[700],
+                    color: Color.fromRGBO(70, 51, 51, 1),
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(30),
                         bottomRight: Radius.circular(30)),
@@ -222,8 +222,9 @@ class _profileGetPageState extends State<profileGetPage> {
         },
         child: Icon(
           Icons.mode_edit,
+          color: Color.fromRGBO(70, 51, 51, 1),
         ),
-        backgroundColor: Colors.lightGreen[800],
+        backgroundColor: Color.fromRGBO(235, 212, 212, 1),
       ),
     );
   }

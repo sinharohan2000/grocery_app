@@ -1,10 +1,3 @@
-// import 'package:flutter/gestures.dart';
-// import 'package:groceryapp/authentication.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter/cupertino.dart';
-// import 'package:groceryapp/screens/registration-screen.dart';
-// import 'package:groceryapp/screens/home_screen.dart';
-// import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:groceryapp/export.dart';
 
 class LoginScreen extends StatefulWidget {
