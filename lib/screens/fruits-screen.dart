@@ -1,15 +1,6 @@
-// import 'package:flutter/material.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:groceryapp/models/product-model.dart';
-// import 'package:groceryapp/widgets/drawerUI.dart';
-// import 'package:groceryapp/widgets/pdt_item.dart';
-// import 'package:provider/provider.dart';
-// import 'package:groceryapp/screens/login-page.dart';
-// import 'package:groceryapp/screens/home_screen.dart';
 
 import 'package:groceryapp/export.dart';
 
-//import 'package:groceryapp/cart.dart';
 
 class FruitScreen extends StatefulWidget {
   static String id = "fruit_screen";
@@ -65,8 +56,6 @@ class _FruitScreenState extends State<FruitScreen> {
             child: ProductItems(
               name: fruitProducts[i].productName,
               imageUrl: fruitProducts[i].imgUrl,
-
-              //Todo: classify the categories and their products in their respective screens
             ),
           ),
         ),

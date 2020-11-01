@@ -36,31 +36,29 @@ class ProductItems4 extends StatelessWidget {
             ),
             Card(
               color: Colors.brown[50],
-              child: Expanded(
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10, right: 10),
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          name,
-                        ),
-                        Expanded(
-                          child: MaterialButton(
-                            onPressed: () {
-                              Scaffold.of(context).showSnackBar(SnackBar(
-                                duration: Duration(seconds: 3),
-                                content: Text('Item Added to Cart'),
-                              ));
-                              cart.addItem(pdt.id, pdt.productName, pdt.price);
-                            },
-                            child: Icon(
-                              Icons.add,
-                            ),
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        name,
+                      ),
+                      Expanded(
+                        child: MaterialButton(
+                          onPressed: () {
+                            Scaffold.of(context).showSnackBar(SnackBar(
+                              duration: Duration(seconds: 3),
+                              content: Text('Item Added to Cart'),
+                            ));
+                            cart.addItem(pdt.id, pdt.productName, pdt.price);
+                          },
+                          child: Icon(
+                            Icons.add,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
