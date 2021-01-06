@@ -75,6 +75,11 @@ class Cart with ChangeNotifier {
     return total;
   }
 
+  double get totalTax {
+    var tax = totalAmount * 18 / 100;
+    return tax;
+  }
+
   void clear() {
     _items = {};
     notifyListeners();

@@ -42,6 +42,8 @@ class _profileGetPageState extends State<profileGetPage> {
     FirebaseFirestore.instance
         .collection('Users')
         .doc(_auth.currentUser.uid)
+        .collection('addresses')
+        .doc()
         .get()
         .then((value) {
       Address = value.data().toString();
@@ -56,7 +58,7 @@ class _profileGetPageState extends State<profileGetPage> {
       body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('Users')
-            .doc(uid)
+            .doc(loggedInUser.uid)
             .collection('addresses')
             .snapshots(),
         builder: (context, snapshot) {

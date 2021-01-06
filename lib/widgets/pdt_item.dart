@@ -5,11 +5,9 @@ class ProductItems extends StatelessWidget {
   final String imageUrl;
 
   ProductItems({this.name, this.imageUrl});
-
   @override
   Widget build(BuildContext context) {
     final pdt = Provider.of<ProductModel>(context);
-
 
     final cart=Provider.of<Cart>(context);
 

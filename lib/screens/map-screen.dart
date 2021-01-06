@@ -81,7 +81,7 @@ class _MapsScreenState extends State<MapsScreen> {
                         },
                         initialCameraPosition: CameraPosition(
                           target: LatLng(26.7026143, 85.288129),
-                          zoom: 5.0,
+                          zoom: 10.0,
                         ),
                         compassEnabled: true,
                         myLocationButtonEnabled: true,
