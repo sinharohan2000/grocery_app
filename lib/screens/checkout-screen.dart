@@ -1,4 +1,5 @@
 import 'package:groceryapp/export.dart';
+import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 class CheckoutScreen extends StatelessWidget {
   static String id = "checkout_screen";
@@ -112,6 +113,58 @@ class PaymentButton extends StatefulWidget {
 class _PaymentButtonState extends State<PaymentButton> {
   bool flag = false;
 
+  Razorpay razorpay;
+
+  @override
+  void initState() {
+    super.initState();
+    razorpay = new Razorpay();
+    razorpay.on(Razorpay.EVENT_PAYMENT_SUCCESS, handlerPaymentSuccess);
+    razorpay.on(Razorpay.EVENT_PAYMENT_ERROR, handlerPaymentError);
+    razorpay.on(Razorpay.EVENT_EXTERNAL_WALLET, handlerExternalWallet);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    razorpay.clear();
+  }
+
+  void openPaymentCheckout() {
+    var options = {
+      "key": "rzp_test_xUKN62D6CK0KS4",
+      "amount": "${(widget.cart.totalAmount) * 100}",
+      "name": "Small Basket",
+      "description": "Payment for cart items",
+      "prefill": {
+        "contact": "9808962967",
+        "email": "rsinha20194@hotmail.com",
+      },
+      "external": {
+        "wallets": ["GPay"],
+      }
+    };
+    try {
+      razorpay.open(options);
+    } catch (e) {
+      Toast.show(e, context);
+    }
+  }
+
+  void handlerPaymentSuccess() {
+    print("Payment Success");
+  }
+
+  void handlerPaymentError() {
+    print("Payment Error");
+  }
+
+  void handlerExternalWallet() {
+    print("External Wallet");
+    Toast.show('External Wallet', context,
+        duration: Toast.LENGTH_SHORT, gravity: Toast.BOTTOM);
+  }
+
   Future<void> _showAlertDialog() async {
     return showDialog<void>(
       context: context,
@@ -191,12 +244,22 @@ class _PaymentButtonState extends State<PaymentButton> {
         elevation: 1,
         child: FlatButton(
           child: Text(
-            'Pay Now',
+            'Proceed to Pay',
             style: TextStyle(
               color: Colors.teal,
             ),
           ),
-          onPressed: widget.cart.totalAmount <= 0
+          onPressed: () {
+            openPaymentCheckout();
+          },
+        ),
+      ),
+    );
+  }
+}
+/*
+*
+* widget.cart.totalAmount <= 0
               ? null
               : () async {
                   await _showAlertDialog();
@@ -211,9 +274,5 @@ class _PaymentButtonState extends State<PaymentButton> {
                   } else {
                     Navigator.pop(context);
                   }
-                },
-        ),
-      ),
-    );
-  }
-}
+*
+* */
