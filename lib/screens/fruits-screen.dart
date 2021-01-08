@@ -28,8 +28,7 @@ class _FruitScreenState extends State<FruitScreen> {
   @override
   Widget build(BuildContext context) {
     final productData = Provider.of<Products>(context);
-    final fruitProducts = productData
-        .items; //a variable to contain the product that is retrieved from product-Model.dart
+    final fruitProducts = productData.items; //a variable to contain the product that is retrieved from product-Model.dart
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow[800],

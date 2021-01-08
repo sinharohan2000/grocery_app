@@ -61,6 +61,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ChangeNotifierProvider.value(
         value: Orders(),
         ),
+        // ChangeNotifierProvider.value(
+        //   value: ProductModel(),
+        // ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -81,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
           CartScreen.id: (context) => CartScreen(),
           ProfileScreen.id: (context) => ProfileScreen(),
           profileGetPage.id: (context) => profileGetPage(),
+          DetailPage.id:(context) =>  DetailPage(),
         },
       ),
     );

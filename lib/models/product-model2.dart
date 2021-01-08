@@ -6,13 +6,15 @@ class ProductModel2 with ChangeNotifier {
   final String category;
   final double price;
   final String imgUrl;
+  final String description;
 
   ProductModel2(
       {@required this.id,
         @required this.productName,
         @required this.category,
         @required this.price,
-        @required this.imgUrl});
+        @required this.imgUrl,
+        @required this.description});
 }
 
 class Products2 with ChangeNotifier {
@@ -24,6 +26,7 @@ class Products2 with ChangeNotifier {
       'https://i5.walmartimages.ca/images/Enlarge/094/505/6000200094505.jpg',
       price: 40.0,
       category: 'Vegetables',
+      description:'Broccoli is a green vegetable that vaguely resembles a miniature tree. It belongs to the plant species known as Brassica oleracea Its closely related to cabbage, Brussels sprouts, kale and cauliflower — all edible plants collectively referred to as cruciferous vegetables.',
     ),
     ProductModel2(
       id: '11',
@@ -32,6 +35,7 @@ class Products2 with ChangeNotifier {
       'https://img.tesco.com/Groceries/pi/000/0262410000000/IDShot_540x540.jpg?h=540&w=540',
       price: 30.0,
       category: 'Vegetables',
+      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
     ),
     ProductModel2(
       id: '12',

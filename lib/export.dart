@@ -13,6 +13,7 @@ export 'package:geolocator/geolocator.dart';
 export 'package:image_picker/image_picker.dart';
 export 'dart:io';
 
+
 //Screens
 export 'package:groceryapp/screens/checkout-screen.dart';
 export 'package:groceryapp/screens/login-page.dart';
@@ -27,6 +28,7 @@ export 'package:groceryapp/screens/home_screen.dart';
 export 'package:groceryapp/screens/fruits-screen.dart';
 export 'package:groceryapp/screens/profile_screen.dart';
 export 'package:groceryapp/screens/profile.dart';
+export 'package:groceryapp/screens/pdt_detail_screen.dart';
 
 //models
 export 'package:groceryapp/models/product-model.dart';
