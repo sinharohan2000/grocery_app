@@ -85,6 +85,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ProfileScreen.id: (context) => ProfileScreen(),
           profileGetPage.id: (context) => profileGetPage(),
           DetailPage.id:(context) =>  DetailPage(),
+          DetailPage2.id:(context) =>  DetailPage2(),
+          DetailPage3.id:(context) =>  DetailPage3(),
+          DetailPage4.id:(context) =>  DetailPage4(),
+          DetailPage5.id:(context) =>  DetailPage5(),
         },
       ),
     );

@@ -11,8 +11,11 @@ class ProductItems3 extends StatelessWidget {
     final pdt = Provider.of<ProductModel3>(context);
 
     final cart = Provider.of<Cart>(context);
-
-    return Padding(
+    return GestureDetector(
+        onTap: (){
+      Navigator.pushNamed(context, DetailPage3.id,arguments: pdt.id);
+    },
+    child:Padding(
       padding: const EdgeInsets.all(8.0),
       child: GridTile(
         child: Column(
@@ -69,6 +72,7 @@ class ProductItems3 extends StatelessWidget {
           ],
         ),
       ),
+    ),
     );
   }
 }

@@ -31,6 +31,10 @@ export 'package:groceryapp/screens/fruits-screen.dart';
 export 'package:groceryapp/screens/profile_screen.dart';
 export 'package:groceryapp/screens/profile.dart';
 export 'package:groceryapp/screens/pdt_detail_screen.dart';
+export 'package:groceryapp/screens/pdt_detail_screen2.dart';
+export 'package:groceryapp/screens/pdt_detail_screen3.dart';
+export 'package:groceryapp/screens/pdt_detail_screen4.dart';
+export 'package:groceryapp/screens/pdt_detail_screen5.dart';
 
 //models
 export 'package:groceryapp/models/product-model.dart';

@@ -44,6 +44,7 @@ class Products2 with ChangeNotifier {
       'https://c.files.bbci.co.uk/32E6/production/_113903031_mediaitem113903028.jpg',
       price: 45.0,
       category: 'Vegetables',
+      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
     ),
     ProductModel2(
       id: '13',
@@ -52,6 +53,7 @@ class Products2 with ChangeNotifier {
       'https://media.istockphoto.com/photos/tomato-isolated-on-white-background-picture-id466175630?k=6&m=466175630&s=612x612&w=0&h=fu_mQBjGJZIliOWwCR0Vf2myRvKWyQDsymxEIi8tZ38=',
       price: 14.0,
       category: 'Vegetables',
+      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
     ),
     ProductModel2(
       id: '14',
@@ -60,33 +62,42 @@ class Products2 with ChangeNotifier {
       'https://chefsmandala.com/wp-content/uploads/2018/03/Beans-Haricot.jpg',
       price: 24.0,
       category: 'Vegetables',
+      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
     ),
-    ProductModel2(
-      id: '15',
-      productName: 'Methi',
-      imgUrl:
-      'https://thestateindia.com/wp-content/uploads/2020/01/fenugreeki-methi-health-benefits.jpg',
-      price: 12.0,
-      category: 'Vegetables',
-    ),
-    ProductModel2(
-      id: '16',
-      productName: 'Cauliflower',
-      imgUrl:
-      'https://images.heb.com/is/image/HEBGrocery/000319058',
-      price: 40.0,
-      category: 'Vegetables',
-    ),
-    ProductModel2(
-      id: '17',
-      productName: 'Cabbage',
-      imgUrl:
-      'https://images-na.ssl-images-amazon.com/images/I/61awtjWicTL._SL1024_.jpg',
-      price: 47.0,
-      category: 'Vegetables',
-    ),
+    // ProductModel2(
+    //   id: '15',
+    //   productName: 'Methi',
+    //   imgUrl:
+    //   'https://thestateindia.com/wp-content/uploads/2020/01/fenugreeki-methi-health-benefits.jpg',
+    //   price: 12.0,
+    //   category: 'Vegetables',
+    //   description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+    // ),
+    // ProductModel2(
+    //   id: '16',
+    //   productName: 'Cauliflower',
+    //   imgUrl:
+    //   'https://images.heb.com/is/image/HEBGrocery/000319058',
+    //   price: 40.0,
+    //   category: 'Vegetables',
+    //   description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+    // ),
+    // ProductModel2(
+    //   id: '17',
+    //   productName: 'Cabbage',
+    //   imgUrl:
+    //   'https://images-na.ssl-images-amazon.com/images/I/61awtjWicTL._SL1024_.jpg',
+    //   price: 47.0,
+    //   category: 'Vegetables',
+    //   description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+    // ),
   ];
   List<ProductModel2> get items {
     return [..._items];
+  }
+
+
+  ProductModel2 findById2(String id) {
+    return _items.firstWhere((pdt) => pdt.id == id);
   }
 }

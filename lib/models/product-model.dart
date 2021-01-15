@@ -63,24 +63,24 @@ class Products with ChangeNotifier {
       category: 'Fruits',
       description: 'A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called "plantains", distinguishing them from dessert bananas. ... The fruits grow in clusters hanging from the top of the plant.',
     ),
-    ProductModel(
-      id: '5',
-      productName: 'Papaya',
-      imgUrl:
-      'https://i5.walmartimages.ca/images/Large/094/495/6000200094495.jpg',
-      price: 30.2,
-      category: 'Fruits',
-      description: 'A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called "plantains", distinguishing them from dessert bananas. ... The fruits grow in clusters hanging from the top of the plant.',
-    ),
-    ProductModel(
-      id: '6',
-      productName: 'Apple',
-      imgUrl:
-      'https://www.applesfromny.com/wp-content/uploads/2020/05/Rome_NYAS-Apples2.png',
-      price: 105.0,
-      category: 'Fruits',
-      description: 'A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called "plantains", distinguishing them from dessert bananas. ... The fruits grow in clusters hanging from the top of the plant.',
-    ),
+    // ProductModel(
+    //   id: '5',
+    //   productName: 'Papaya',
+    //   imgUrl:
+    //   'https://i5.walmartimages.ca/images/Large/094/495/6000200094495.jpg',
+    //   price: 30.2,
+    //   category: 'Fruits',
+    //   description: 'A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called "plantains", distinguishing them from dessert bananas. ... The fruits grow in clusters hanging from the top of the plant.',
+    // ),
+    // ProductModel(
+    //   id: '6',
+    //   productName: 'Apple',
+    //   imgUrl:
+    //   'https://www.applesfromny.com/wp-content/uploads/2020/05/Rome_NYAS-Apples2.png',
+    //   price: 105.0,
+    //   category: 'Fruits',
+    //   description: 'A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa. In some countries, bananas used for cooking may be called "plantains", distinguishing them from dessert bananas. ... The fruits grow in clusters hanging from the top of the plant.',
+    // ),
   ];
   List<ProductModel> get items {
     return [..._items];
