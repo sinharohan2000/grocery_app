@@ -133,12 +133,12 @@ class _PaymentButtonState extends State<PaymentButton> {
   void openPaymentCheckout() {
     var options = {
       "key": "rzp_test_xUKN62D6CK0KS4",
-      "amount": "${(widget.cart.totalAmount) * 100}",
+      "amount": "${(widget.cart.totalAmount + widget.cart.totalTax) * 100}",
       "name": "Small Basket",
       "description": "Payment for cart items",
       "prefill": {
-        "contact": "9808962967",
-        "email": "rsinha20194@hotmail.com",
+        "contact": "",
+        "email": "",
       },
       "external": {
         "wallets": ["GPay"],
@@ -153,6 +153,21 @@ class _PaymentButtonState extends State<PaymentButton> {
 
   void handlerPaymentSuccess() {
     print("Payment Success");
+    // widget.cart.totalAmount <= 0
+    //     ? null
+    //     : () async {
+    //   await _showAlertDialog();
+    //   if (flag == true) {
+    //     await Provider.of<Orders>(context, listen: false).addOrder(
+    //         widget.cart.items.values.toList(),
+    //         widget.cart.totalAmount);
+    //     widget.cart.clear();
+    //     await _showFinalAlertDialog();
+    //     Navigator.pop(context);
+    //     Navigator.pop(context);
+    //   } else {
+    //     Navigator.pop(context);
+    //   }
   }
 
   void handlerPaymentError() {
@@ -249,9 +264,23 @@ class _PaymentButtonState extends State<PaymentButton> {
               color: Colors.teal,
             ),
           ),
-          onPressed: () {
-            openPaymentCheckout();
-          },
+          onPressed: widget.cart.totalAmount <= 0
+              ? null
+              : () async {
+                  openPaymentCheckout();
+                  await _showAlertDialog();
+                  if (flag == true) {
+                    await Provider.of<Orders>(context, listen: false).addOrder(
+                        widget.cart.items.values.toList(),
+                        widget.cart.totalAmount);
+                    widget.cart.clear();
+                    await _showFinalAlertDialog();
+                    Navigator.pop(context);
+                    Navigator.pop(context);
+                  } else {
+                    Navigator.pop(context);
+                  }
+                },
         ),
       ),
     );
