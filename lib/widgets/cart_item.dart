@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:groceryapp/cart.dart';
+import 'package:groceryapp/export.dart';
 
 class CartPdt extends StatelessWidget {
   final String id;

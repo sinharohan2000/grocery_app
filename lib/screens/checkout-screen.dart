@@ -153,21 +153,6 @@ class _PaymentButtonState extends State<PaymentButton> {
 
   void handlerPaymentSuccess() {
     print("Payment Success");
-    // widget.cart.totalAmount <= 0
-    //     ? null
-    //     : () async {
-    //   await _showAlertDialog();
-    //   if (flag == true) {
-    //     await Provider.of<Orders>(context, listen: false).addOrder(
-    //         widget.cart.items.values.toList(),
-    //         widget.cart.totalAmount);
-    //     widget.cart.clear();
-    //     await _showFinalAlertDialog();
-    //     Navigator.pop(context);
-    //     Navigator.pop(context);
-    //   } else {
-    //     Navigator.pop(context);
-    //   }
   }
 
   void handlerPaymentError() {
@@ -267,8 +252,8 @@ class _PaymentButtonState extends State<PaymentButton> {
           onPressed: widget.cart.totalAmount <= 0
               ? null
               : () async {
-                  openPaymentCheckout();
                   await _showAlertDialog();
+                  openPaymentCheckout();
                   if (flag == true) {
                     await Provider.of<Orders>(context, listen: false).addOrder(
                         widget.cart.items.values.toList(),
@@ -286,22 +271,3 @@ class _PaymentButtonState extends State<PaymentButton> {
     );
   }
 }
-/*
-*
-* widget.cart.totalAmount <= 0
-              ? null
-              : () async {
-                  await _showAlertDialog();
-                  if (flag == true) {
-                    await Provider.of<Orders>(context, listen: false).addOrder(
-                        widget.cart.items.values.toList(),
-                        widget.cart.totalAmount);
-                    widget.cart.clear();
-                    await _showFinalAlertDialog();
-                    Navigator.pop(context);
-                    Navigator.pop(context);
-                  } else {
-                    Navigator.pop(context);
-                  }
-*
-* */

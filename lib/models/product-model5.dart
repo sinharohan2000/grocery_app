@@ -23,19 +23,19 @@ class Products5 with ChangeNotifier {
       id: '40',
       productName: 'Patanjali Aata',
       imgUrl:
-      'https://images-na.ssl-images-amazon.com/images/I/91oIQlysS4L._SL1500_.jpg',
+          'https://images-na.ssl-images-amazon.com/images/I/91oIQlysS4L._SL1500_.jpg',
       price: 183.0,
       category: 'Grains',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Patanjali Whole Wheat Atta\n- Net Wt. 1kg',
     ),
     ProductModel5(
       id: '41',
       productName: 'Moong Daal',
       imgUrl:
       'https://www.gramiyum.in/wp-content/uploads/2019/09/moong-dal-green-split.jpg',
-      price: 90.0,
+      price: 70.0,
       category: 'Grains',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Green Moong\n- Dal Split\n- 500 gm pouch',
     ),
     ProductModel5(
       id: '42',
@@ -44,7 +44,7 @@ class Products5 with ChangeNotifier {
       'https://aapkagrocery.com/wp-content/uploads/2020/06/toor-dal.png',
       price: 48.0,
       category: 'Grains',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Toor Daal\n- 500 gm Pouch\n- Unpolished Split',
     ),
     ProductModel5(
       id: '43',
@@ -53,16 +53,16 @@ class Products5 with ChangeNotifier {
       'https://images-na.ssl-images-amazon.com/images/I/61VASI018mL._SL1400_.jpg',
       price: 48.0,
       category: 'Grains',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- TATA Salt\n- Vacuum Evaporated Iodised\n- 250gm Pouch',
     ),
     ProductModel5(
       id: '43',
       productName: 'Patanjali Rice',
       imgUrl:
       'https://images-na.ssl-images-amazon.com/images/I/91ZHw62YpYL._SL1500_.jpg',
-      price: 390.0,
+      price: 260.0,
       category: 'Grains',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Patanjali Rice\n- 1121 Gold\n- 5 kg Pack',
     ),
   ];
 

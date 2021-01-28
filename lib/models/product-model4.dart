@@ -23,31 +23,30 @@ class Products4 with ChangeNotifier {
       id: '30',
       productName: 'Lays American',
       imgUrl:
-      'https://blueberrymartnepal.com/863-home_default/lays-american-style-cream-onion-42gm.jpg',
+          'https://www.bigbasket.com/media/uploads/p/l/294297_12-lays-potato-chips-calm-cream-onion-flavour.jpg',
       price: 20.0,
       category: 'Mart',
-
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description:
+          '- Lays Potato Chips \n- Calm Cream & Onion Flavour\n- 30 g Pouch',
     ),
     ProductModel4(
       id: '31',
       productName: 'Pickle Powder',
       imgUrl:
       'https://5.imimg.com/data5/LD/XT/MY-14442040/pickle-powder-500x500.jpg',
-      price: 47.0,
+      price: 50.0,
       category: 'Mart',
 
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Double Horse Pickle Powder\n- 100g Pouch',
     ),
     ProductModel4(
       id: '32',
       productName: 'Priya Detergent',
       imgUrl:
       'https://5.imimg.com/data5/HA/CL/MY-3854394/priya-detergent-powder-500x500.jpg',
-      price: 47.0,
+      price: 46.0,
       category: 'Mart',
-
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Priya Detergent\n- 1 kg pack\n- Heavy Duty Fresh Pure',
     ),
     ProductModel4(
       id: '33',
@@ -57,7 +56,7 @@ class Products4 with ChangeNotifier {
       price: 36.0,
       category: 'Mart',
 
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Medimix Ayurvedic Soap\n- Sandal',
     ),
     ProductModel4(
       id: '34',
@@ -67,7 +66,7 @@ class Products4 with ChangeNotifier {
       price: 107.0,
       category: 'Mart',
 
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '- Nycil Cool Herbal Powder\n- Germ Expert\n- Buy 1 Get 1 Free',
     ),
     // ProductModel4(
     //   id: '35',

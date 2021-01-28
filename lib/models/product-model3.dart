@@ -24,10 +24,10 @@ class Products3 with ChangeNotifier {
       id: '20',
       productName: 'Amul Milk',
       imgUrl:
-      'https://images-na.ssl-images-amazon.com/images/I/81jBZSGusFL._SL1500_.jpg',
-      price: 24.7,
+          'https://images-na.ssl-images-amazon.com/images/I/81jBZSGusFL._SL1500_.jpg',
+      price: 28,
       category: 'Dairy',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '-Amul Moti Moti\n-Homogenised Toned Milk, 450 ml',
     ),
     ProductModel3(
       id: '21',
@@ -36,25 +36,25 @@ class Products3 with ChangeNotifier {
       'https://www.ecosystemmarketplace.com/wp-content/uploads/2019/11/Swiss-Cheese.jpg',
       price: 500.0,
       category: 'Dairy',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '-Fresh Organic Cheese\n-Unprocessed local cheese',
     ),
     ProductModel3(
       id: '22',
       productName: 'Amul Paneer',
       imgUrl:
       'https://awesomedairy.com/wp-content/uploads/2017/02/amul-malai-paneer.png',
-      price: 39.0,
+      price: 70.0,
       category: 'Dairy',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '-Amul Malai Paneer\n-200g Pouch',
     ),
     ProductModel3(
       id: '23',
       productName: 'Dahi',
       imgUrl:
       'https://market.thulo.com/uploads/ads/2018122715459247045_500.jpg',
-      price: 74.0,
+      price: 85.0,
       category: 'Dairy',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '-Juju Dhau Meetha Dahi\n-750ml in mud pot',
     ),
     ProductModel3(
       id: '24',
@@ -63,7 +63,7 @@ class Products3 with ChangeNotifier {
       'https://5.imimg.com/data5/QM/MI/MY-3508796/amul-butter-500x500.jpg',
       price: 50.0,
       category: 'Dairy',
-      description: 'Potato, (Solanum tuberosum), annual plant in the nightshade family (Solanaceae), grown for its starchy edible tubers. ... Potatoes are frequently served whole or mashed as a cooked vegetable and are also ground into potato flour, used in baking and as a thickener for sauces.',
+      description: '-Amul Butter \n- Pasteurised, 100 g Carton',
     ),
     // ProductModel3(
     //   id: '25',

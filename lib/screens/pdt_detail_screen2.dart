@@ -24,9 +24,10 @@ class DetailPage2 extends StatelessWidget {
             ),
           ),
           Text(
-            'Price: \₹${loadedPdt.price}',
+            'Price: \₹ ${loadedPdt.price}',
             style: TextStyle(
-              fontSize: 30,
+              fontSize: 25,
+              fontFamily: "Righteous",
             ),
           ),
           Padding(
@@ -42,15 +43,11 @@ class DetailPage2 extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Scaffold.of(context).showSnackBar(SnackBar(
-          //   duration: Duration(seconds: 3),
-          //   content: Text('Item Added to Cart'),
-          // ));
-          cart.addItem(productId, loadedPdt.productName
-              , loadedPdt.price);
+          cart.addItem(productId, loadedPdt.productName, loadedPdt.price);
+          Toast.show("${loadedPdt.productName} added to cart", context);
         },
         child: Icon(
-          Icons.shopping_cart,
+          Icons.add_shopping_cart,
           size: 30,
         ),
       ),
