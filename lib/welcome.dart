@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:groceryapp/screens/login_phone.dart';
 import 'export.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -83,7 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
               margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
               child: FlatButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, LoginScreen.id);
+                    Navigator.pushNamed(context, LoginScreenPhone.id);
                   },
                   child: Text(
                     'Divein',

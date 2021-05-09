@@ -1,4 +1,5 @@
 import 'package:groceryapp/export.dart';
+import 'package:groceryapp/screens/login_phone.dart';
 import 'package:groceryapp/screens/profile.dart';
 
 void main() async {
@@ -61,9 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ChangeNotifierProvider.value(
         value: Orders(),
         ),
-        // ChangeNotifierProvider.value(
-        //   value: ProductModel(),
-        // ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -72,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
         routes: {
           WelcomeScreen.id: (context) => WelcomeScreen(),
           LoginScreen.id: (context) => LoginScreen(),
+          LoginScreenPhone.id: (context) => LoginScreenPhone(),
           RegistrationScreen.id: (context) => RegistrationScreen(),
           HomeScreen.id: (context) => HomeScreen(),
           MapsScreen.id: (context) => MapsScreen(),
